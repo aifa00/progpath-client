@@ -683,35 +683,51 @@ function SingleWorkspace() {
                     <h5>PROJECTS</h5>
 
                     <div>
-                      <Link
-                        to="#"
-                        className="addProjectButton"
-                        onClick={(e) => handleAddProject(e)}
-                        style={{ backgroundColor: "var(--color-tertiary" }}
+                      <Tooltip
+                        placement="top"
+                        trigger={["hover"]}
+                        overlay={<span>Add project</span>}
                       >
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
+                        <Link
+                          to="#"
+                          className="addProjectButton"
+                          onClick={(e) => handleAddProject(e)}
+                          style={{ backgroundColor: "var(--color-tertiary" }}
                         >
-                          <i
-                            style={{ fontSize: "large", marginTop: "3%" }}
-                            className="bi bi-plus-circle"
-                          ></i>{" "}
-                          &nbsp;&nbsp;
-                          <span style={{ marginTop: "5px" }}>New Project</span>
-                        </div>
-                      </Link>
-                      <button
-                        onClick={(e) => handleAddProject(e)}
-                        id="add-project-btn"
-                        className="btn-tertiary"
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <i
+                              style={{ fontSize: "large", marginTop: "3%" }}
+                              className="bi bi-plus-circle"
+                            ></i>
+                            &nbsp;&nbsp;
+                            <span style={{ marginTop: "5px" }}>
+                              New Project
+                            </span>
+                          </div>
+                        </Link>
+                      </Tooltip>
+
+                      <Tooltip
+                        placement="top"
+                        trigger={["hover"]}
+                        overlay={<span>Add project</span>}
                       >
-                        {" "}
-                        + New Project
-                      </button>
+                        <button
+                          onClick={(e) => handleAddProject(e)}
+                          id="add-project-btn"
+                          className="btn-tertiary"
+                        >
+                          {" "}
+                          + New Project
+                        </button>
+                      </Tooltip>
+
                       {dropDown === "addProject" && (
                         <>
                           <AddProject

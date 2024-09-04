@@ -10,6 +10,7 @@ import { BarLoader } from "react-spinners";
 import { getUserId } from "../../utils/jwtUtils";
 import { getStatusColor, getPriorityColor } from "../../utils/appUtils";
 import { RootState } from "../../redux/store";
+import Tooltip from "rc-tooltip";
 
 interface Person {
   _id: string;
@@ -593,30 +594,42 @@ const Task: React.FC<TaskProps> = ({
               {" "}
               <br />
               <div className="upper">
-                <label>
-                  <i className="bi bi-paperclip"></i>&nbsp; Attach
-                  <input
-                    type="file"
-                    multiple
-                    accept="image/*,application/pdf,video/*,audio/*"
-                    style={{ display: "none" }}
-                    onChange={handleFileChange}
-                  />
-                </label>
-
-                <label
-                  id="addLabels"
-                  style={{ position: "relative" }}
-                  onClick={() => {
-                    closeAllDropdowns();
-                    setDropDownLabels(true);
-                  }}
+                <Tooltip
+                  placement="top"
+                  trigger={["hover"]}
+                  overlay={<span>Add attachments</span>}
                 >
-                  <i className="bi bi-bookmark"></i>&nbsp; Labels
-                  {dropDownLabels && (
-                    <AddLabel setLabels={setLabels} setEdit={setEdit} />
-                  )}
-                </label>
+                  <label>
+                    <i className="bi bi-paperclip"></i>&nbsp; Attach
+                    <input
+                      type="file"
+                      multiple
+                      accept="image/*,application/pdf,video/*,audio/*"
+                      style={{ display: "none" }}
+                      onChange={handleFileChange}
+                    />
+                  </label>
+                </Tooltip>
+
+                <Tooltip
+                  placement="top"
+                  trigger={["hover"]}
+                  overlay={<span>Add labels</span>}
+                >
+                  <label
+                    id="addLabels"
+                    style={{ position: "relative" }}
+                    onClick={() => {
+                      closeAllDropdowns();
+                      setDropDownLabels(true);
+                    }}
+                  >
+                    <i className="bi bi-bookmark"></i>&nbsp; Labels
+                    {dropDownLabels && (
+                      <AddLabel setLabels={setLabels} setEdit={setEdit} />
+                    )}
+                  </label>
+                </Tooltip>
               </div>
               <div className="lower">
                 <div className="description">
