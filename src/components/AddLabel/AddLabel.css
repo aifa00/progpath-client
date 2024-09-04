@@ -1,0 +1,87 @@
+.body .upper .labelDropdown {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-tertiary);
+    padding: 10px;
+    z-index: 1;    
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+.body .upper .labelDropdown .input-group {
+    width: 100%;
+    margin-top: 5%;
+    color: var(--color-text-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.body .upper .labelDropdown .input-group input {
+    width: 90%;  
+    padding: 3% 5%;
+    background: transparent;
+    outline: none;
+    border: none;
+    border: 1px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+    margin-top: 1%;
+    border-radius: 3px;
+}
+
+.body .upper .labelDropdown .theme-options {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.body .upper .labelDropdown .theme-option {
+    height: 25px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: large;
+}
+
+.body .upper .labelDropdown button {
+    width: 95%;
+    padding-block: 5px;
+}
+
+
+@media (min-width: 300px) and (max-width: 500px) {
+    .body .upper .labelDropdown {        
+        top: 2rem;
+        left: 0;
+        width: 8rem;
+        padding: 8px; 
+    }
+
+    .body .upper .labelDropdown .theme-options {
+        margin-top: 0;
+    }
+
+    .body .upper .labelDropdown .theme-option {
+        height: 15px;
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    .body .upper .labelDropdown button {
+        width: 90%;
+        padding-block: 5px;
+    }
+    
+    .body .upper .labelDropdown button {
+        width: 100%;
+        padding-block: 3px;
+    }
+}

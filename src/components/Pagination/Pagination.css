@@ -1,0 +1,18 @@
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1%;
+    font-size: smaller;
+}
+
+.pagination button {
+   background: transparent;
+   border: none;
+   cursor: pointer;
+   color: var(--color-text-primary);
+   
+}
+.pagination button:hover{
+    color: var(--color-hover-gray);
+    transform: scale(1.5);
+}

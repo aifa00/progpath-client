@@ -1,0 +1,406 @@
+.workspace {
+    display: flex;
+    height: 100vh;    
+}
+
+.workspace .dashboard {
+    background-color: var(--color-secondary);
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.workspace .innerdiv-dashboard {
+    position: relative;
+    background-color: var(--color-secondary);
+    min-height: 100%;
+    border-radius: 3px;
+    overflow-y: scroll;
+    padding-inline: 5%;
+    padding-block: 1%;
+    box-shadow: 0 0 20px 2px rgba(144, 0, 255, 0.079), 0 0 20px 4px rgba(144, 0, 255, 0.079);    
+}
+
+.workspace .innerdiv-dashboard::-webkit-scrollbar {
+    display: none;
+}
+
+.workspace .dashboard .search-div { 
+    text-align: end; 
+}
+
+.workspace .dashboard .search-div input {
+    width: 30%; 
+}
+
+.workspace .dashboard .search-div #bell-icon {
+    display: none;
+}
+
+.workspace .dashboard .search-div i {
+    color: var(--color-text-primary);
+
+}
+
+.workspace .dashboard .workspace-wrapper {    
+    position: relative;
+    display: inline-block;
+}
+
+.workspace .dashboard #add-workspace-btn {
+    height: 4rem;
+}
+
+.workspace .dashboard .contents {    
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.workspace .dashboard .workspaces {
+    color: var(--color-text-primary);
+    width: 90%;
+    flex-grow: 1;    
+}
+
+.workspaces ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.workspaces ul li {
+    background-color: var(--color-tertiary);
+    border-radius: 5px;    
+    width: 20%;
+    padding-block: 3%;
+    padding-inline: 1%;
+    margin-right: 2%;
+    margin-bottom: 3%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.workspaces ul li:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.workspace .dashboard .invitations {
+    width: 35%;
+    background-color: var(--color-bg-gray);   
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column; 
+    padding: 1%;
+    color: var(--color-text-primary);
+}
+
+.workspace .dashboard .invitations .notifications {
+    position: relative;
+    display: flex;    
+    flex-direction: column;
+    background-color: var(--color-bg-gray);
+    margin-top: 3%;
+    padding: 3%;
+    font-size: smaller;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.workspace .dashboard .invitations .notifications span {
+    position: absolute;
+    right: 1%;
+    top: 2%;
+    font-size: xx-small;
+}
+
+.workspace .dashboard .invitations .notifications p {
+    max-width: 80%;
+}
+
+.workspace .dashboard .invitations .notifications .options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.workspace .dashboard .invitations .notifications .options button {
+    flex: 1;
+    margin-inline: 5px;
+    margin-top: 10px;
+    color: var(--color-text-primary);
+    background: transparent;
+    border: none;
+    padding: 1%;
+    cursor: pointer;
+}
+
+.workspace .dashboard .invitations .notifications .options button:hover {
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+.workspace .dashboard .invitations .notifications .options .reject-button {
+    border: 1px solid var(--color-text-primary);
+}
+
+.workspace .dashboard .invitations .notifications .options .accept-button {
+    border: 1px solid #1859FF;
+    box-shadow: 0 0 20px 2px rgba(144, 0, 255, 0.24), 0 0 20px 4px rgba(143, 0, 255, 0.24);
+}
+
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace {
+    position: absolute;
+    border-radius: 5px;
+    padding: 15px;
+    width: 17rem;
+    z-index: 1;
+    top: 120%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text-primary);
+    background-color: var(--color-tertiary);
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .input-group {
+    width: 100%;
+    margin-top: 5%;
+    color: var(--color-text-primary);    
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .input-group input,
+.workspace .dashboard .innerdiv-dashboard .add-workspace .input-group input, textarea {
+    width: 90%;  
+    padding: 3% 5%; 
+    outline: none;
+    border: none !important;
+    margin-top: 1%;
+    border-radius: 3px;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-gray) !important;
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .input-group select {
+    width: 100%;  
+    padding: 3% 5%; 
+    outline: none;   
+    border: none; 
+    margin-top: 1%;
+    border-radius: 3px;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-gray);
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .input-group select option {    
+    background-color: var(--color-primary);
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace label {
+    font-size: small;
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .invite-members {
+    color: var(--color-text-primary);
+    width: 100%;
+    font-size: small;
+    margin-block: 5%;
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .invite-members input {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-text-primary);
+    width: 70%;
+    color: var(--color-text-primary);
+    padding: 3% 2%;
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .invite-members button {
+    width: 20%;
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .invite-members .add-recipients {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 5%;
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .recipients {
+    background-color: var(--color-bg-gray);
+    padding: 2% 5%;
+    margin-block: 2%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .recipients strong {
+    font-size: large;
+}
+
+.workspace .dashboard .innerdiv-dashboard .add-workspace .recipients strong:hover, span:hover {
+    cursor: pointer;
+}
+
+
+@media (min-width:300px) and (max-width:500px) {
+
+    .workspace .dashboard { 
+        padding: 10px; 
+        font-size: xx-small;
+    }
+
+    .workspace .dashboard .search-div input {
+        width: 50%; 
+    }
+
+    .workspace .dashboard .workspace-wrapper {
+        margin-top: 1rem;
+    }
+    
+    .workspace .dashboard #add-workspace-btn {
+        height: 2rem; 
+    }
+
+    .workspace .dashboard .contents {
+        margin-top: 2rem;
+    }
+
+    .workspace .dashboard .search-div #bell-icon {
+        display:inline;
+        font-size: smaller;        
+        margin-left: 10px;
+    }
+
+    .workspace .dashboard .invitations {  
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
+        width: 10rem;
+        background-color: var(--color-tertiary); 
+    }
+
+    .hide-invitations {
+        display: none;
+    }
+
+    .workspaces ul li {        
+        width: 45%;
+        padding-block: 4%;
+        padding-inline: 0.5%;
+    }
+
+    .workspace .dashboard .innerdiv-dashboard .add-workspace {
+        width: 12rem;
+        padding: 10px;
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace .invite-members button {
+        width: 20%;  
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace .invite-members .add-recipients {        
+        margin-block: 5%;
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace span { 
+        font-size: large;     
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace .recipients {
+        padding: 0;
+        padding-inline: 5px;    
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace .recipients strong {
+        font-size: large;
+        font-weight: 100;
+    }    
+
+    .workspace .dashboard .invitations .notifications {
+        border-left: 1px solid var(--color-violet);
+    }
+
+}
+
+@media (min-width:501px) and (max-width:1000px) {
+
+    .workspace .dashboard .search-div input {
+        width: 50%; 
+    }
+
+    .workspace .dashboard .workspace-wrapper {
+        margin-top: 1rem;
+    }
+    
+    .workspace .dashboard #add-workspace-btn {
+        height: 4rem; 
+    }
+
+    .workspace .dashboard .contents {
+        margin-top: 2rem;
+    }
+
+    .workspace .dashboard .search-div #bell-icon {
+        display:inline;
+        font-size: medium;        
+        margin-left: 40px;        
+    }
+
+    .workspace .dashboard .invitations {  
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        width: 20rem;
+        background-color: var(--color-tertiary); 
+    }
+
+    .hide-invitations {
+        display: none;
+    }
+
+    .workspaces ul li {        
+        width: 45%;
+        padding-block: 4%;
+        padding-inline: 0.5%;
+    }
+
+    .workspace .dashboard .innerdiv-dashboard .add-workspace {
+        width: 12rem;
+        padding: 10px;
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace .invite-members button {
+        width: 20%;  
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace .invite-members .add-recipients {        
+        margin-block: 5%;
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace span { 
+        font-size: large;     
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace .recipients {
+        padding: 0;
+        padding-inline: 5px;    
+    }
+    
+    .workspace .dashboard .innerdiv-dashboard .add-workspace .recipients strong {
+        font-size: large;
+        font-weight: 100;
+    }    
+
+    .workspace .dashboard .invitations .notifications {
+        border-left: 1px solid var(--color-violet);
+    }    
+
+}

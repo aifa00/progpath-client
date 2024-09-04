@@ -1,0 +1,130 @@
+.welcome-screen {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../../public/images/backround-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100dvh;
+}
+
+.welcome-screen nav .nav-links {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.welcome-screen .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding-block: 50px;
+    font-size: small;
+}
+
+.welcome-screen .hero-content {
+    position: relative;
+    border: 2px solid var(--color-text-primary);
+    width: 40%;
+    height: 65%;
+    border-radius: 10px;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text-primary);
+    padding-inline-start: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;    
+}
+
+.welcome-screen .hero-title {
+    font-size: 45px;    
+    border-right: 0px solid ;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(18), cursor 0.4s step-end infinite alternate;
+}
+
+.welcome-screen .hero-description {
+    max-width: 80%;
+    margin-top: 30px;
+    font-size: larger;
+    line-height: 30px;
+}
+
+.welcome-screen nav #signin-button {
+    padding: 13px 20px;
+    background: transparent;
+    border: 2px solid #1859FF;
+    border-radius: 50px;
+    color: var(--color-text-primary);
+    box-shadow: 0 0 20px 2px rgba(144, 0, 255, 0.24), 0 0 20px 4px rgba(143, 0, 255, 0.24);
+    cursor: pointer;
+}
+
+@keyframes cursor {
+    50% {border-color: transparent}
+}
+
+@keyframes typing {
+    from {width: 0}
+}
+
+@media (min-width:300px) and (max-width:500px) {
+
+    .welcome-screen {        
+        height: 80dvh;
+    }
+
+    .welcome-screen .navbar {
+        padding-block: 30px;
+        font-size: smaller;
+    }
+    
+    .welcome-screen .contact-btn {
+        display: none;
+    }
+
+    .welcome-screen .hero-content {
+        width: 80%;
+        height: 50%;
+        padding-inline-start: 40px;
+    }
+    .welcome-screen .hero-title {
+        font-size: larger;
+        max-width: 90%;
+        margin-bottom: 15px;
+    }
+    .welcome-screen .hero-description {
+        max-width: 90%;
+        margin-top: 10px;
+        font-size: smaller;
+        line-height: 20px;
+    }
+    .welcome-screen .welcome-heading {
+        font-size: medium   ;
+    }
+
+    .welcome-screen .login-heading {
+        font-size: small;
+        margin-bottom: 15px;
+    }
+
+    .welcome-screen nav #signin-button {
+        padding: 8px
+    }
+    
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+    .welcome-screen .hero-content {
+        width: 80%;
+    }
+
+    .welcome-screen nav #signin-button {
+        padding: 10px
+    }
+}

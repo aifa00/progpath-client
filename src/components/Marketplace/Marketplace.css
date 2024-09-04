@@ -1,0 +1,228 @@
+.marketplace {
+  display: flex;
+  min-height: 100vh;
+  max-height: auto;
+  color: var(--color-text-primary);
+}
+
+.marketplace .main {
+  flex-grow: 1;
+}
+
+.marketplace .main .body {
+  margin: 3rem auto;
+  width: 70%;
+}
+
+.marketplace .main .utils {
+  display: flex;
+}
+
+.marketplace .main .utils #sortButton,
+.marketplace .main .utils #filterButton {
+  position: relative;
+}
+
+.marketplace .main .utils #sortButton button,
+.marketplace .main .utils #filterButton button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.marketplace .main .utils input[type="search"] {
+  width: 100%;
+  font-size: medium;
+  padding: 5px 40px 5px 5px;
+  margin-left: 1rem;
+}
+.marketplace .main .utils input[type="search"]::placeholder {
+  font-size: small;
+}
+.marketplace .main .utils .sort-and-filter {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.marketplace .main .content {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.marketplace .main .content .card img {
+  width: 100%;
+  height: 12rem;
+}
+
+.marketplace .main .content .card {
+  position: relative;
+  width: 19rem;
+  height: 18rem;
+  padding: 10px;
+  margin-bottom: 3rem;
+  background-color: var(--color-tertiary);
+  cursor: pointer;
+}
+
+.marketplace .main .content .card:hover {
+  background-color: var(--color-hover-gray);
+}
+
+.marketplace .main .content .card .description {
+  height: 3rem;
+  overflow: hidden;
+  margin-block: 10px;
+}
+
+.marketplace .main .content .card .description p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.6;
+  height: calc(1.6em * 3);
+  font-size: smaller;
+}
+
+.marketplace .main .content .card .likes-and-comments {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  font-size: small;
+}
+
+.marketplace .main .content .card .likes-and-comments i {
+  color: var(--color-violet);
+}
+
+.marketplace .main .body .utils .search-input {
+  flex: 1;
+  position: relative;
+  margin-left: 1rem;
+}
+
+.marketplace .main .body .utils #searchIcon {
+  position: absolute;
+  right: 0;
+}
+
+.marketplace .main .body .utils #searchIcon:hover {
+  color: var(--color-blue);
+}
+
+.marketplace .main .body .utils .sort-and-filter .dropdown-option {
+  justify-content: space-between;
+}
+
+.marketplace .main .body .utils .sort-and-filter .dropdown-option span {
+  color: var(--color-blue);
+}
+
+.marketplace .chat-button {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: var(--color-violet);
+  border: none;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+  .marketplace .main .body {
+    margin: 15px auto;
+    width: 90%;
+  }
+
+  .marketplace .main .utils {
+    flex-direction: column;
+  }
+
+  .marketplace .main .utils .dropdown-menu {
+    top: 2rem !important;
+  }
+
+  .marketplace .main .utils .sort-and-filter {
+    margin-top: 15px;
+  }
+
+  .marketplace .main .utils input[type="search"] {
+    width: 100%;
+    margin: 0;
+    padding-left: 1px;
+    font-size: x-small !important;
+  }
+
+  #upload-btn {
+    padding: 5px;
+  }
+
+  .marketplace .main .body .utils #searchIcon {
+    bottom: 8px;
+    right: 5px;
+  }
+
+  .marketplace .main .content {
+    margin-top: 3rem;
+  }
+
+  .marketplace .main .content .card {
+    margin-bottom: 1rem;
+    background-color: var(--color-tertiary);
+    cursor: pointer;
+  }
+
+  .marketplace .chat-button {
+    right: 2rem;
+    bottom: 3rem;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 1000px) {
+  .marketplace .main .body {
+    margin: 15px auto;
+    width: 95%;
+  }
+
+  .marketplace .main .utils input[type="search"] {
+    margin-inline: 10px;
+    padding-left: 1px;
+  }
+
+  #upload-btn {
+    padding: 5px;
+  }
+
+  .marketplace .main .body .utils #searchIcon {
+    bottom: 5px;
+  }
+
+  .marketplace .main .content {
+    margin-top: 3rem;
+  }
+
+  .marketplace .main .content .card {
+    width: 10rem;
+    margin-bottom: 1rem;
+    height: 14rem;
+  }
+
+  .marketplace .main .content .card img {
+    height: 7rem;
+  }
+
+  .marketplace .chat-button {
+    right: 2rem;
+    bottom: 3rem;
+  }
+}

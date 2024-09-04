@@ -1,0 +1,152 @@
+.addprogram-form {
+  background-color: var(--color-secondary);
+  padding: 30px;
+  color: var(--color-text-primary);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 50rem;
+  position: relative;
+  margin: 5rem auto;
+  transform: translateY(0);
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.24), 0 0 20px 4px rgba(0, 0, 0, 0.24);
+}
+
+.addprogram-form .image-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.addprogram-form .image-group input[type="file"] {
+  display: none;
+}
+
+.addprogram-form .image-group img {
+  width: 15rem;
+  height: 10rem;
+  border-radius: 10px;
+}
+
+.addprogram-form .image-group label {
+  position: relative;
+}
+
+.addprogram-form .image-group i {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+}
+
+.addprogram-form .input-group .error {
+  color: var(--color-warning);
+  font-size: smaller;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.addprogram-form .input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.addprogram-form .input-group label {
+  font-size: small;
+  margin-bottom: 5px;
+}
+
+.addprogram-form .input-group input {
+  border: none;
+  outline: none;
+  padding: 15px;
+  font-weight: bold;
+  font-size: large;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-gray);
+  border-bottom: 2px solid var(--color-blue);
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.24), 0 0 20px 4px rgba(0, 0, 0, 0.24);
+}
+
+.addprogram-form .input-group input::placeholder {
+  font-size: smaller;
+  font-weight: normal;
+}
+
+.ql-container {
+  min-height: 13rem;
+  background-color: var(--color-bg-gray);
+  border: none !important;
+  font-size: medium;
+  padding-bottom: 2rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.24),
+    -10px 10px 20px rgba(0, 0, 0, 0.24);
+}
+
+.ql-toolbar {
+  border: none !important;
+  border-bottom: 2px solid var(--color-blue) !important;
+  border-top: 2px solid var(--color-blue) !important;
+  border-left: 1px solid var(--color-bg-gray) !important;
+  border-right: 1px solid var(--color-bg-gray) !important;
+}
+
+.custom-quill-editor .ql-editor.ql-blank::before {
+  color: #767676;
+}
+
+.addprogram-form #submit-button {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.addprogram-form #submit-button:hover {
+  transform: scale(1.03);
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .addprogram-form {
+    padding: 10px;
+  }
+
+  .addprogram-form .image-group {
+    justify-content: space-around;
+  }
+
+  .addprogram-form .image-group img {
+    width: 6rem;
+    height: 4.5rem;
+  }
+
+  .addprogram-form .image-group i {
+    top: 10px;
+    right: 5px;
+  }
+
+  .addprogram-form .input-group input {
+    padding: 5px;
+  }
+  .addprogram-form .input-group {
+    font-size: x-small;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  .addprogram-form {
+    padding: 10px;
+  }
+
+  .addprogram-form .image-group {
+    justify-content: space-around;
+  }
+
+  .addprogram-form .image-group img {
+    width: 8rem;
+    height: 5rem;
+  }
+
+  .addprogram-form .image-group i {
+    top: 10px;
+    right: 5px;
+  }
+}

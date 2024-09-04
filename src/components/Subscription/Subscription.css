@@ -1,0 +1,146 @@
+.subscription {
+    position: relative;
+    width: 60%;
+    height: auto;
+    color: var(--color-text-primary);
+    background-color: var(--color-secondary);
+    border-radius: 20px; 
+    padding: 10px;
+}
+
+.subscription .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 5rem 2rem 5rem;
+}
+
+.subscription .header .features {
+    margin-block: 2rem;
+    display: flex;
+}
+
+.subscription .header .features div {
+    margin: 10px 20px;
+}
+
+.subscription .header .features .premium i {
+    color: var(--color-success);
+    margin-right: 5px;
+}
+
+.subscription .header .features .normal i {
+    color: var(--color-error);
+    margin-right: 5px;
+}
+
+.subscription .header .features p {
+    margin-top: 10px;
+}
+
+.subscription .cards {
+    display: flex;
+    flex-wrap: wrap; 
+}
+.subscription .cards div {
+    flex: 1;
+}
+.subscription .cards h1 {
+    display: inline-block;
+}
+
+.subscription .cards .card {
+    background-color: var(--color-tertiary);
+    border-radius: 10px; 
+    height: 10rem;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 24px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subscription .cards .card:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.subscription .cards .card button:hover {
+    transform: scale(1);
+}
+
+.subscription .cards .card h4 {
+    margin-bottom: 20px;
+}
+
+
+
+/* subscribed-page */
+.subscribed-page {
+    padding-block: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-primary);
+}
+
+.subscribed-page div {
+    margin-block: 5px;
+}
+
+.subscribed-page .main-body {
+    text-align: center;
+}
+.subscribed-page .main-body img {
+    width: 15rem;
+}
+
+
+@media (min-width: 300px) and (max-width: 1000px) {
+    .subscription {      
+        width: 73%;     
+        padding: 10px;   
+        overflow: scroll;
+    }
+    
+    .subscription .header {
+        padding: 0;
+        margin-top: 2.5rem;
+    }
+    
+    .subscription .header .features {
+        margin-block: 10px;
+    }
+    
+    .subscription .header .features div {
+        margin: 10px 10px;        
+    }
+    
+    .subscription .cards {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .subscription .cards div {
+        flex: initial;
+    }
+
+    .subscription .cards .card { 
+        height: 5.5rem;
+        margin: 10px;
+        width: 10rem;
+    }
+
+    .subscription .cards .card h4 {
+        margin-bottom: 10px;
+    }
+
+    .subscription .cards .card button {
+        font-size: small;
+        padding: 5px;
+        margin-top: 5px;
+    }
+    
+}

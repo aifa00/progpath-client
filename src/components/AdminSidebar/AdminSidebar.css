@@ -1,0 +1,134 @@
+.admin-sidebar {
+    position: relative;
+    background-color: var(--color-primary);
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3% 0 5% 0%;
+    transition: all 0.5s;
+    height: 100vh;
+}
+
+.admin-sidebar-collapsed {
+    width: 0;    
+    height: 100%;
+}
+
+.admin-sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+
+.admin-sidebar .btn-toggle {
+    padding: 0;
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    cursor: pointer;
+}
+
+.admin-sidebar .btn-toggle i {
+    font-size: large;
+}
+
+.admin-sidebar .btn-toggle-collapsed {    
+    position: absolute;
+    top: 0;
+}
+
+.admin-sidebar a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
+
+.admin-sidebar ul {
+    color: var(--color-text-primary);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-sidebar ul i {
+   color: rgb(104, 99, 104);
+   font-size: large;
+   margin-right: 20px;
+}
+
+.admin-sidebar ul li{
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding-block: 5px;
+    padding-inline: 10px;
+    margin-inline: 10px;
+    border-radius: 10px;
+    
+}
+
+.admin-sidebar ul li:hover{
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.admin-sidebar .active li {
+    background-color: var(--color-tertiary);
+}
+
+@media (min-width:300px) and (max-width:500px)  {
+    .admin-sidebar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 500;
+        width: 15rem;        
+    }
+
+    .admin-sidebar-collapsed {
+        left: -100%;        
+    }
+
+    .admin-sidebar ul {
+        margin-top: 3rem;
+        padding: 0;
+    }
+
+    .admin-sidebar .btn-toggle {       
+        top: 3%;        
+    }
+
+    .admin-sidebar .btn-toggle i {
+        font-size: large !important;
+    }   
+
+}
+
+
+@media (min-width:501px) and (max-width:1000px)  {
+    .admin-sidebar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 500;
+        width: 15rem;       
+    }
+
+    .admin-sidebar-collapsed {
+        left: -100%;        
+    }
+
+    .admin-sidebar ul {        
+        margin-top: 3rem;
+        padding: 0;
+    }
+    .admin-sidebar .btn-toggle {       
+        top: 3%;              
+    }   
+
+}
+
+

@@ -1,0 +1,169 @@
+.admin-subscriptonPlans {
+    display: flex;
+    height: 100vh;
+    color: var(--color-text-primary);
+}
+
+.admin-subscriptonPlans .container {
+    background-color: var(--color-secondary);
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.admin-subscriptonPlans .container h5 {
+ position: absolute;
+ top: 5%;
+ left: 5%;
+}
+
+.admin-subscriptonPlans .container #addButton {
+    position: absolute;
+    top: 4%;
+    left: 25%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--color-blue);
+    border: none; 
+}
+.admin-subscriptonPlans .container {
+    position: relative;
+    background-color: var(--color-secondary);
+    overflow-y: scroll;
+}
+
+.admin-subscriptonPlans .container::-webkit-scrollbar {
+    display: none;
+}
+
+.admin-subscriptonPlans .container .table {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 90%;
+}
+
+.admin-subscriptonPlans .container table {
+    font-size: smaller;
+    text-align: center;    
+    background-color: var(--color-tertiary);
+    border-radius: 2px;
+    border-collapse: collapse;
+}
+
+.admin-subscriptonPlans .container table thead th {
+    border-bottom: 1px solid var(--color-text-primary);
+    padding: 1.5%;
+}
+
+.admin-subscriptonPlans .container table tbody td {
+    padding: 1.5%;
+}
+
+.admin-subscriptonPlans .container table select {
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    outline: none;
+}
+
+
+.admin-subscriptonPlans .container table button {
+    border: 1px solid blue;
+    height: 20px;
+    margin-right: 3%;
+    background: transparent;
+    color: var(--color-text-primary);
+    box-shadow: 0 0 10px 0px rgba(144, 0, 255, 0.24), 0 0 10px 0px rgba(143, 0, 255, 0.24);
+}
+
+.admin-subscriptonPlans .container table .bock-button {
+    width: 4rem;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+    .admin-subscriptonPlans .container #addButton {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        padding: 8px;
+    }
+    
+    .admin-subscriptonPlans .container .table {
+        top: 20%;
+        left: 5%;
+        width: 90%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .admin-subscriptonPlans .container table {
+        font-size: x-small;
+    }
+
+    .admin-subscriptonPlans .container table thead th,
+    .admin-subscriptonPlans .container table tbody td {
+        padding: 18px 5px;
+    }
+
+    .admin-subscriptonPlans .container table {
+        width: 600px;
+        margin-bottom: 20px;
+    }
+
+    .admin-subscriptonPlans .container table tbody td img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .admin-subscriptonPlans .container table tbody td select {
+        font-size: x-small;
+    }
+
+    .admin-subscriptonPlans .container table tbody td button {
+        font-size: x-small;
+        padding: 3px 5px;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+    .admin-subscriptonPlans .container #addButton {
+        position: absolute;
+        top: 12%;
+        left: 5%;
+        padding: 8px;
+    }
+
+    .admin-subscriptonPlans .container .table {
+        top: 25%;
+        left: 5%;
+        width: 90%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .admin-subscriptonPlans .container table thead th,
+    .admin-subscriptonPlans .container table tbody td {
+        padding: 18px 5px;
+    }
+
+    .admin-subscriptonPlans .container table {
+        width: 900px;
+        margin-bottom: 20px;
+    }
+
+    .admin-subscriptonPlans .container table tbody td img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .admin-subscriptonPlans .container table tbody td select {
+        font-size: x-small;
+    }
+
+    .admin-subscriptonPlans .container table tbody td button {
+        font-size: x-small;
+        padding: 3px 5px;
+    }
+}

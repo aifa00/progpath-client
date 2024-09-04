@@ -1,0 +1,184 @@
+.users {
+    display: flex;
+    height: 100vh;
+    color: var(--color-text-primary);
+}
+
+.users .container {
+    background-color: var(--color-secondary);
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.users .container h5 {
+ position: absolute;
+ top: 5%;
+ left: 5%;
+}
+
+.users .container {
+    position: relative;
+    background-color: var(--color-secondary);
+    overflow-y: scroll;
+}
+
+.users .container::-webkit-scrollbar {
+    display: none;
+}
+
+.users .container .table {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 90%;
+}
+
+.users .container table {
+    font-size: smaller;
+    text-align: center;    
+    background-color: var(--color-tertiary);
+    border-radius: 2px;
+    border-collapse: collapse;
+}
+
+.users .container table thead th {
+    border-bottom: 1px solid var(--color-text-primary);
+    padding: 1.5%;
+}
+
+.users .container table tbody td {
+    padding: 1.5%;
+}
+
+.users .container table select {
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    outline: none;
+}
+
+
+.users .container table button {
+    border: 1px solid blue;
+    height: 20px;
+    margin-right: 3%;
+    background: transparent;
+    color: var(--color-text-primary);
+    box-shadow: 0 0 10px 0px rgba(144, 0, 255, 0.24), 0 0 10px 0px rgba(143, 0, 255, 0.24);
+}
+
+.users .container table .bock-button {
+    width: 4rem;
+}
+
+
+.users .container .search-filter-sort {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.users .container .search-filter-sort select {
+    width: 5rem;  
+}
+
+.users .container option {
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);    
+}
+
+
+@media (min-width: 300px) and (max-width: 500px) {
+    .users .container .search-filter-sort {
+        align-items: center;
+        width: 100%;        
+        top: 10%;
+        right: 0%;        
+    }
+
+    .users .container .table {
+        top: 20%;
+        left: 5%;
+        width: 90%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .users .container table {
+        font-size: x-small;
+    }
+
+    .users .container table thead th,
+    .users .container table tbody td {
+        padding: 18px 5px;
+    }
+
+    .users .container table {
+        width: 600px;
+        margin-bottom: 20px;
+    }
+
+    .users .container table tbody td img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .users .container table tbody td select {
+        font-size: x-small;
+    }
+
+    .users .container table tbody td button {
+        font-size: x-small;
+        padding: 3px 5px;
+    }
+}
+
+
+
+@media (min-width: 501px) and (max-width: 1000px) {
+    .users .container .search-filter-sort {        
+        justify-content: space-between;
+        position: absolute;
+        top: 3%;        
+        right: 10%;        
+    }
+
+    .users .container .table {
+        top: 20%;
+        left: 5%;
+        width: 90%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .users .container table thead th,
+    .users .container table tbody td {
+        padding: 18px 5px;
+    }
+
+    .users .container table {
+        width: 900px;
+        margin-bottom: 20px;
+    }
+
+    .users .container table tbody td img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .users .container table tbody td select {
+        font-size: x-small;
+    }
+
+    .users .container table tbody td button {
+        font-size: x-small;
+        padding: 3px 5px;
+    }
+}

@@ -1,0 +1,118 @@
+.chat-box {
+  position: relative;
+  background-color: var(--color-tertiary);
+  height: 35rem;
+  width: 30rem;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.chat-box .chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--color-hover-gray);
+}
+
+.chat-box .chat-room {
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  overflow: auto;
+  padding-right: 5px;
+}
+
+.chat-box #chat-search {
+  background-color: var(--color-bg-gray);
+  border: none;
+  padding: 8px;
+  color: var(--color-text-primary);
+}
+
+.chat-box .chat-room::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+.chat-box .chat-room::-webkit-scrollbar-track {
+  background: var(--color-hover-gray); /* Background of the scrollbar track */
+  border-radius: 10px;
+  margin-block: 1rem;
+}
+
+.chat-box .chat-room::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.chat-box .chat-room::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color when hovered */
+}
+
+.chat-box .chat-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg-gray);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.chat-box .chat-list:hover {
+  background-color: rgb(125, 85, 125);
+}
+
+.chat-box .list-item {
+  display: flex;
+}
+
+.chat-box .chat-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.chat-box .unreadMessageCount {
+  background-color: green;
+  padding: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-box .info-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text-secondary);
+}
+
+.chat-box #no-results-found-text {
+  text-align: center;
+  margin-block: 10px;
+  color: var(--color-violet);
+}
+
+.chat-box .chat-room .chat-list #latest-message {
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .chat-box {
+    width: 90%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  .chat-box {
+    width: 30rem;
+  }
+}

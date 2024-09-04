@@ -1,0 +1,338 @@
+.singleProject {
+  display: flex;
+  height: 100vh;
+}
+
+.singleProject .dashboard {
+  background-color: var(--color-secondary);
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.singleProject .innerdiv-dashboard {
+  position: relative;
+  background-color: var(--color-secondary);
+  min-height: 100%;
+  border-radius: 3px;
+  overflow-y: scroll;
+  box-shadow: 0 0 20px 2px rgba(144, 0, 255, 0.079),
+    0 0 20px 4px rgba(144, 0, 255, 0.079);
+}
+
+.singleProject .dashboard .innerdiv-dashboard .burndown-graph {
+  width: 50%;
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.singleProject .innerdiv-dashboard i,
+button {
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+.singleProject .innerdiv-dashboard::-webkit-scrollbar {
+  display: none;
+}
+
+.singleProject .dashboard .body {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  color: var(--color-text-primary);
+}
+
+.singleProject .dashboard .header {
+  color: var(--color-text-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid var(--color-text-primary);
+  padding-bottom: 1%;
+  margin-bottom: 1%;
+}
+
+.singleProject .dashboard .header .right {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  flex: 1;
+  align-items: center;
+  font-size: large;
+}
+
+.singleProject .dashboard .header .right .chart-icon {
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.singleProject .dashboard .header .right .chart-icon:hover {
+  background-color: var(--color-hover-gray);
+}
+
+.singleProject .dashboard .header .left {
+  flex: 3;
+}
+
+.singleProject .dashboard .header .right .menu {
+  position: absolute;
+  top: 100%;
+  color: var(--color-text-primary);
+  width: 50%;
+  background-color: var(--color-tertiary);
+  z-index: 1;
+  box-shadow: 0 0 24px 2px rgba(0, 0, 0, 0.5), 0 0 20px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+.singleProject .dashboard .header .right .menu .links {
+  padding: 10px;
+}
+
+.singleProject .dashboard .header .right .menu .links:hover {
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.singleProject .dashboard .tasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.singleProject .dashboard .tasks .addTask {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.singleProject .dashboard .tasks .addTask #addTaskButton {
+  padding: 15px;
+  border-radius: 3px;
+  border: none;
+  font-weight: 600;
+  background-color: rgba(72, 72, 72, 0.263);
+}
+
+.singleProject .dashboard .tasks .addTask button:hover {
+  background-color: rgba(72, 72, 72, 0.1);
+}
+
+.singleProject .dashboard .tasks .addTaskInput {
+  background-color: var(--color-tertiary);
+  padding: 10px;
+  border-radius: 10px;
+  width: 40%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.singleProject .dashboard .tasks .addTaskInput input[type="text"] {
+  background: transparent;
+  border-radius: 3px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  font-size: medium;
+}
+
+.singleProject .dashboard .tasks .addTaskInput button {
+  margin-inline: 5px;
+}
+
+.singleProject .dashboard .tasks .cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.singleProject .dashboard .tasks .cards .task-status-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--color-hover-gray);
+  margin-bottom: 3rem;
+}
+
+.singleProject .dashboard .tasks .cards .task-status-wrapper .status-heading {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--color-text-secondary);
+}
+
+.singleProject .dashboard .tasks .cards .card {
+  padding: 10px;
+  width: 15rem;
+  background-color: var(--color-tertiary);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+
+.singleProject .dashboard .tasks .cards .card {
+  position: relative;
+}
+
+.singleProject .dashboard .tasks .cards .card .title,
+.assignee,
+.status,
+.labels,
+.priority,
+.dueDate {
+  margin-bottom: 10px;
+}
+
+.singleProject .dashboard .tasks .cards .card i {
+  color: var(--color-violet);
+}
+
+.singleProject .dashboard .tasks .cards .card .assignee {
+  margin-left: 10px;
+  width: fit-content;
+}
+
+.singleProject .dashboard .tasks .cards .card .assignee img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-left: -10px;
+}
+
+.singleProject .dashboard .tasks .cards .card #task-delete-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.singleProject .dashboard .tasks .cards .card select option {
+  background-color: var(--color-primary);
+}
+
+.singleProject .dashboard .tasks .cards .card .status select {
+  padding-block: 1px;
+  padding-inline: 5px;
+  border-radius: 15px;
+}
+
+.singleProject .dashboard .tasks .cards .card .priority select {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.singleProject .dashboard .tasks .cards .card .labels h5 {
+  padding-block: 3px;
+  padding-inline: 8px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: var(--color-tertiary);
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .singleProject .dashboard {
+    padding: 10px;
+  }
+
+  .singleProject .dashboard .body {
+    top: 10px;
+  }
+
+  .singleProject .dashboard .header {
+    padding-bottom: 10px;
+  }
+  .singleProject .dashboard .header .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: x-small;
+  }
+
+  .singleProject .tasks .addTask {
+    margin-top: 20px;
+    margin-bottom: 2rem !important;
+  }
+
+  .singleProject .tasks .addTask #addTaskButton {
+    padding: 10px !important;
+  }
+
+  .singleProject .dashboard .tasks .cards {
+    flex-direction: column;
+  }
+
+  .singleProject .dashboard .tasks .cards .card {
+    padding: 5px;
+    margin-inline: 10px;
+    font-size: x-small;
+  }
+
+  .singleProject .dashboard .tasks .cards .card .title {
+    max-width: 90%;
+  }
+
+  .singleProject .dashboard .tasks .cards .card .assignee img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .singleProject .dashboard .tasks .cards .card #task-delete-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .singleProject .dashboard .tasks .cards .card select option {
+    background-color: var(--color-primary);
+  }
+
+  .singleProject .dashboard .tasks .cards .card .status select {
+    padding-block: 1px;
+    padding-inline: 3px;
+  }
+
+  .singleProject .dashboard .tasks .cards .card .priority select {
+    padding: 3px;
+  }
+
+  .singleProject .dashboard .tasks .cards .card .dueDate h5 {
+    font-size: xx-small;
+    font-weight: 400;
+  }
+
+  .singleProject .dashboard .header .right .chart-icon {
+    padding: 3px;
+    width: initial;
+    height: initial;
+    margin-right: 5px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  .singleProject .dashboard .tasks .cards .card {
+    margin-inline: 10px;
+  }
+
+  .singleProject .tasks .addTask {
+    margin-top: 20px;
+  }
+
+  .singleProject .dashboard .header .right .chart-icon {
+    padding: 3px;
+  }
+
+  .singleProject .dashboard .innerdiv-dashboard .burndown-graph {
+    width: 55%;
+  }
+}

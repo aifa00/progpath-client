@@ -1,0 +1,66 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0c0b11 !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+div .rc-tooltip-inner {
+  min-height: 10px;
+}
+div .rc-tooltip-placement-top,
+div .rc-tooltip-placement-bottom {
+  padding: 5px 0 5px 0;
+}
+
+div .rc-tooltip-placement-left,
+div .rc-tooltip-placement-right {
+  padding: 0 4px 0 4px;
+}
+
+:root {
+  --color-primary: #000000;
+  --color-secondary: #0c0b11;
+  --color-tertiary: #1a1a1a;
+  --color-blue: #1859ff;
+  --color-violet: rgb(148, 102, 148);
+
+  --color-bg-gray: rgba(55, 55, 55, 0.263);
+  --color-hover-gray: rgba(93, 93, 93, 0.368);
+
+  --color-success: #23bf48;
+  --color-error: #bc1324;
+  --color-warning: #ffc107;
+
+  --color-text-primary: #bebebe;
+  --color-text-secondary: #8a8a8a;
+}

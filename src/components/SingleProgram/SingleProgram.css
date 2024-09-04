@@ -1,0 +1,259 @@
+.single-program {
+  display: flex;
+  min-height: 100vh;
+  color: var(--color-text-primary);
+}
+
+.single-program .dashboard {
+  flex-grow: 1;
+}
+
+.single-program .dashboard .post {
+  width: 60%;
+  margin: 5rem auto;
+}
+
+.single-program .chat-button {
+  position: fixed;
+  bottom: 7rem;
+  right: 3rem;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background-color: var(--color-violet);
+  border: none;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.single-program .dashboard .post .top h1 {
+  margin-bottom: 3rem;
+  line-height: 2;
+  text-align: center;
+}
+
+.single-program .dashboard .post .top img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 100%;
+}
+
+.single-program .dashboard .post .likes-and-comments {
+  text-align: end;
+  padding-block: 10px;
+  margin-bottom: 4rem;
+}
+
+.single-program .dashboard .post .likes-and-comments i {
+  color: var(--color-violet);
+  font-size: large;
+}
+
+.single-program .dashboard .post .content {
+  margin-bottom: 5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(77, 77, 77, 0.388);
+  line-height: 3;
+}
+
+.single-program .dashboard .post .content h4 {
+  margin-bottom: 13px;
+}
+
+.single-program .dashboard .post .language p,
+.single-program .dashboard .post .frameworks p,
+.single-program .dashboard .post .technologies p {
+  margin-top: 10px;
+  margin-bottom: 1rem;
+}
+
+.single-program .summarize-button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background-color: rgb(52, 101, 186);
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.single-program .summarize-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.single-program .summarized-content {
+  position: relative;
+  width: 40%;
+  border-radius: 10px;
+  background-color: var(--color-tertiary);
+  padding: 5% 5% 3% 5%;
+  min-height: 30vh;
+}
+
+.single-program .summary-text {
+  min-height: auto;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 3%;
+  line-height: 2;
+}
+
+.single-program .summary-text::-webkit-scrollbar {
+  width: 10px;
+}
+
+.single-program .summary-text::-webkit-scrollbar-track {
+  background: var(--color-hover-gray);
+  border-radius: 10px;
+  margin-block: 3rem;
+}
+
+.single-program .summary-text::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.single-program .summarized-content #close-summary-button {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  font-size: x-large;
+}
+
+.single-program .loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .single-program .dashboard .post {
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  .single-program .dashboard .post .top h1 {
+    margin-bottom: 2rem;
+  }
+
+  .single-program .dashboard .post .top img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .single-program .dashboard .post .likes-and-comments span {
+    font-size: small;
+  }
+
+  .single-program .dashboard .post .likes-and-comments {
+    margin-bottom: 1rem;
+  }
+
+  .single-program .dashboard .post .content {
+    margin-bottom: 3rem;
+  }
+
+  .single-program .dashboard .post .top small {
+    font-size: xx-small;
+  }
+
+  .single-program .dashboard .post .content li {
+    font-size: x-small;
+  }
+
+  .single-program .summarize-button {
+    right: 2rem;
+    bottom: 2rem;
+    padding: 5px;
+  }
+
+  .single-program .summarize-button img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .single-program .summarized-content {
+    width: 80%;
+    padding: 10% 0 5% 5%;
+  }
+
+  .single-program .summary-text {
+    max-height: 80vh;
+  }
+
+  .single-program .summarized-content #close-summary-button {
+    top: 1rem;
+    right: 1rem;
+    font-size: large !important;
+  }
+
+  .single-program .chat-button {
+    right: 2rem;
+    bottom: 4.5rem;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  .single-program .dashboard .post {
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  .single-program .dashboard .post .top h1 {
+    margin-bottom: 2rem;
+  }
+
+  .single-program .dashboard .post .top img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .single-program .dashboard .post .top small {
+    font-size: x-small;
+  }
+
+  .single-program .dashboard .post .likes-and-comments span {
+    font-size: small;
+  }
+
+  .single-program .dashboard .post .content li {
+    font-size: small;
+  }
+
+  .single-program .summarized-content {
+    width: 80%;
+    padding: 10% 0 5% 5%;
+  }
+
+  .single-program .summary-text {
+    max-height: 80vh;
+  }
+
+  .single-program .summarized-content #close-summary-button {
+    top: 1rem;
+    right: 1rem;
+    font-size: large !important;
+  }
+
+  .single-program .summarize-button {
+    right: 2rem;
+    bottom: 2rem;
+    padding: 10px;
+  }
+
+  .single-program .summarize-button img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .single-program .chat-button {
+    right: 2rem;
+    bottom: 5.5rem;
+  }
+}
