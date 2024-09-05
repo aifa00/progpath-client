@@ -16,6 +16,7 @@ import {
   setAvatarUrl,
   setUsername,
 } from "../../redux/userSlice";
+import Tooltip from "rc-tooltip";
 
 interface ProgramsType {
   _id: "";
@@ -521,9 +522,15 @@ function Profile() {
               </div>
             )}
             {membership && (
-              <button onClick={openAddProgramForm} className="btn-primary">
-                + Upload Program
-              </button>
+              <Tooltip
+                placement="bottom"
+                trigger={["hover"]}
+                overlay={<span>Upload a program</span>}
+              >
+                <button onClick={openAddProgramForm} className="btn-primary">
+                  + Upload Program
+                </button>
+              </Tooltip>
             )}
           </div>
         </div>

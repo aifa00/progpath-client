@@ -4,6 +4,7 @@ import Logo from "../../assets/Logo";
 import { useDispatch } from "react-redux";
 import { setAlert } from "../../redux/alertSlice";
 import axios from "../../axiosConfig";
+import { ClipLoader } from "react-spinners";
 
 interface OtpProps {
   setOtpForm: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,6 +13,8 @@ interface OtpProps {
 }
 
 const Otp: React.FC<OtpProps> = ({ setOtpForm, onSuccess, email }) => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [resendOtpLoading, setResendOtpLoading] = useState<boolean>(false);
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const [timeLeft, setTimeLeft] = useState(300); // 300 seconds for 5 minutes
 
@@ -50,9 +53,13 @@ const Otp: React.FC<OtpProps> = ({ setOtpForm, onSuccess, email }) => {
 
   const handleSubmit = async () => {
     if (otp.join("").length < 4) {
-      dispatch(setAlert({ message: "Please enter the OTP !", type: "error" }));
+      dispatch(setAlert({ message: "Enter a valid OTP !", type: "error" }));
       return;
     }
+
+    if (loading) return;
+
+    setLoading(true);
 
     try {
       const res = await axios.post(`/otp/verification`, {
@@ -65,6 +72,8 @@ const Otp: React.FC<OtpProps> = ({ setOtpForm, onSuccess, email }) => {
       }
     } catch (error: any) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -76,6 +85,10 @@ const Otp: React.FC<OtpProps> = ({ setOtpForm, onSuccess, email }) => {
 
   const handleResendOtp = async () => {
     try {
+      if (resendOtpLoading) return;
+
+      setResendOtpLoading(true);
+
       const res = await axios.post(`/otp/resend`, { email });
 
       if (res.data.success) {
@@ -84,6 +97,8 @@ const Otp: React.FC<OtpProps> = ({ setOtpForm, onSuccess, email }) => {
       }
     } catch (error: any) {
       console.log(error);
+    } finally {
+      setResendOtpLoading(false);
     }
   };
 
@@ -112,12 +127,23 @@ const Otp: React.FC<OtpProps> = ({ setOtpForm, onSuccess, email }) => {
               );
             })}
           </div>
-          <button className="btn-primary" onClick={handleSubmit}>
-            VERIFY
+          <button
+            className={loading ? "btn-disabled" : "btn-primary"}
+            onClick={handleSubmit}
+          >
+            {!loading ? (
+              "VERIFY"
+            ) : (
+              <ClipLoader size={10} color="var(--color-text-secondary)" />
+            )}
           </button>
           <p>{formatTime(timeLeft)}</p> <br />
           <h5 className="resend-otp" onClick={handleResendOtp}>
-            resend OTP
+            {!resendOtpLoading ? (
+              "resend OTP"
+            ) : (
+              <ClipLoader size={10} color="var(--color-text-secondary)" />
+            )}
           </h5>
         </div>
       </div>

@@ -10,6 +10,7 @@ import { togglePremiumComponent } from "../../redux/premiumSlice";
 import { RootState } from "../../redux/store";
 import { setPremiumUser } from "../../redux/userSlice";
 import ChatBox from "../ChatBox/ChatBox";
+import Tooltip from "rc-tooltip";
 
 interface ProgramsType {
   _id: string;
@@ -283,13 +284,19 @@ function Marketplace() {
                 )}
               </div>
 
-              <button
-                onClick={openUploadForm}
-                id="upload-btn"
-                className="btn-primary"
+              <Tooltip
+                placement="bottom"
+                trigger={["hover"]}
+                overlay={<span>Upload a program</span>}
               >
-                + Upload
-              </button>
+                <button
+                  onClick={openUploadForm}
+                  id="upload-btn"
+                  className="btn-primary"
+                >
+                  + Upload
+                </button>
+              </Tooltip>
 
               <button
                 className="chat-button"
