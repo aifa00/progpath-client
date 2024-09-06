@@ -27,7 +27,8 @@ import SingleProgramPage from "./pages/user/SingleProgramPage";
 import MarketplacePage from "./pages/user/MarketplacePage";
 import AdminProgramPage from "./pages/admin/AdminProgramPage";
 import Logo from "./assets/Logo";
-import { PropagateLoader } from "react-spinners";
+import { GridLoader } from "react-spinners";
+import { setTheme } from "./utils/appUtils";
 
 const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
@@ -41,6 +42,15 @@ function App() {
   const notify = useTypedSelector((state) => state.notify);
   const error = useTypedSelector((state) => state.error);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme && ["light", "dark"].includes(theme)) {
+      setTheme(theme);
+    } else {
+      setTheme("dark");
+    }
+  }, []);
 
   useEffect(() => {
     const userAuth = async () => {
@@ -76,7 +86,7 @@ function App() {
           <Logo />
         </div>
         <div className="propagate-loader">
-          <PropagateLoader color="var(--color-blue)" />
+          <GridLoader color="var(--color-blue)" />
         </div>
       </div>
     );

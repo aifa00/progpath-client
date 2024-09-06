@@ -69,7 +69,6 @@
 }
 
 .addprogram-form .input-group input::placeholder {
-  font-size: smaller;
   font-weight: normal;
 }
 
@@ -77,10 +76,10 @@
   min-height: 13rem;
   background-color: var(--color-bg-gray);
   border: none !important;
-  font-size: medium;
   padding-bottom: 2rem;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.24),
     -10px 10px 20px rgba(0, 0, 0, 0.24);
+  font-size: large !important;
 }
 
 .ql-toolbar {

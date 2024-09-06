@@ -13,8 +13,10 @@ import AddProject from "../AddProject/AddProject";
 import { BarLoader } from "react-spinners";
 import { togglePremiumComponent } from "../../redux/premiumSlice";
 import Tooltip from "rc-tooltip";
+import Spinner from "../../assets/Spinner";
 
 function SingleWorkspace() {
+  const [pageLoading, setPageLoading] = useState(false);
   const [userId] = useState(getUserId());
   const [loading, setLoading] = useState(false);
   const [editWorkspaceModal, setEditWorkspaceModal] = useState(false);
@@ -45,6 +47,8 @@ function SingleWorkspace() {
   useEffect(() => {
     const fetData = async () => {
       try {
+        setPageLoading(true);
+
         const { data } = await axios.get(`/workspaces/${workspaceId}`);
         if (data.success) {
           const targetObject = data.workspace.collaborators.find(
@@ -61,6 +65,8 @@ function SingleWorkspace() {
         }
       } catch (error) {
         console.log(error);
+      } finally {
+        setPageLoading(false);
       }
     };
     fetData();
@@ -356,6 +362,12 @@ function SingleWorkspace() {
     setOpenDialog(true);
   };
 
+  if (pageLoading)
+    return (
+      <div className="spinner">
+        <Spinner />
+      </div>
+    );
   return (
     <>
       <div className="singleWorkspace" onClick={handleDropDownClose}>

@@ -1,108 +1,106 @@
 .sidebar {
-    position: relative;
-    background-color: var(--color-primary);
-    width: 13%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 4rem;
-    padding-bottom: 5rem;
-    transition: all 0.5s;
+  position: relative;
+  background-color: var(--color-primary);
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  transition: all 0.5s;
 }
 
-.collapsed {    
-    width: 3rem;
+.collapsed {
+  width: 3rem;
 }
 
 .sidebar i {
-   color: var(--color-violet);
-   font-size: x-large;
-   margin-right: 10px;
+  color: var(--color-violet);
+  font-size: x-large;
+  margin-right: 10px;
 }
-
 
 .sidebar .btn-toggle {
-    padding: 0;
-    background: transparent;
-    border: none;
-    position: absolute;
-    top: 3%;
-    right: 3%;
-    cursor: pointer;
-    font-size: medium;
+  padding: 0;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  cursor: pointer;
+  font-size: medium;
 }
 .sidebar .btn-toggle i {
-   font-size: medium;
+  font-size: medium;
 }
 
 .sidebar a {
-    text-decoration: none;
-    color: var(--color-text-primary);
+  text-decoration: none;
+  color: var(--color-text-primary);
 }
 
-
 .sidebar ul {
-    color: var(--color-text-primary);
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  color: var(--color-text-primary);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .collapsed ul li p {
-    display: none;
+  display: none;
 }
 .sidebar ul li {
-    cursor: pointer;
-    margin-top: 3px;
-    display: flex;
-    align-items: center;
-    padding-block: 8px;
-    padding-inline: 5px;
-    margin-inline: 10px;
-    border-radius: 10px;
+  cursor: pointer;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  padding-block: 8px;
+  padding-inline: 5px;
+  margin-inline: 10px;
+  border-radius: 10px;
 }
 
 .collapsed ul li {
-    padding-inline: 0;
-    margin-inline: 0;
-    padding-left: 8px;
-    border-radius: 0;
+  padding-inline: 0;
+  margin-inline: 0;
+  padding-left: 8px;
+  border-radius: 0;
 }
 
 .sidebar .active li {
-    background-color: var(--color-tertiary);
+  background-color: var(--color-tertiary);
 }
 
 .collapsed .active li {
-    background: transparent;
-    border-left: 3px solid var(--color-violet)
+  background: transparent;
+  border-left: 3px solid var(--color-violet);
 }
 
-.sidebar ul li:hover{
-    transform: scale(1.1);
-    transition: .5s;
+.sidebar ul li:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 .collapsed ul li:hover {
-    transform: scale(1);
-    transition: 0;
-    background-color: var(--color-bg-gray);
+  transform: scale(1);
+  transition: 0;
+  background-color: var(--color-bg-gray);
 }
 
-@media (min-width:300px) and (max-width:500px) {
-    .sidebar {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 20rem;
-        z-index: 100;
-        font-size: smaller;
-    }
+@media (min-width: 300px) and (max-width: 500px) {
+  .sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20rem;
+    z-index: 100;
+    font-size: smaller;
+  }
 
-    .collapsed {
-        position: relative;
-        width: 2rem;
-    }
-    .collapsed i {
-        font-size: smaller;
-    }
+  .collapsed {
+    position: relative;
+    width: 2rem;
+  }
+  .collapsed i {
+    font-size: smaller;
+  }
 }

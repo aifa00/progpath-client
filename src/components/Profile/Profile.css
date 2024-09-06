@@ -118,6 +118,12 @@
   margin-bottom: 3rem;
 }
 
+.marketplace-uploads .upper .right span:hover {
+  background-color: var(--color-violet);
+  padding: 8px;
+  border-radius: 10px;
+}
+
 .marketplace-uploads .upper div {
   flex: 1;
 }

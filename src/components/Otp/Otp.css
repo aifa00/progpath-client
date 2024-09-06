@@ -1,10 +1,10 @@
 .otp-body {
-  background-color: var(--color-secondary);
+  background-color: #0c0b11;
   height: 90%;
   position: absolute;
   width: 90%;
   border-radius: 3px;
-  color: var(--color-text-primary);
+  color: #bebebe;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +24,7 @@
 .otp-body button {
   margin-block: 2rem;
   width: 70%;
+  color: #bebebe;
 }
 
 .otp-body .logo {

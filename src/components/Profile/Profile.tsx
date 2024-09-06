@@ -17,6 +17,7 @@ import {
   setUsername,
 } from "../../redux/userSlice";
 import Tooltip from "rc-tooltip";
+import Spinner from "../../assets/Spinner";
 
 interface ProgramsType {
   _id: "";
@@ -28,6 +29,7 @@ interface ProgramsType {
 
 function Profile() {
   const [Loading, setLoading] = useState(false);
+  const [imageLoading, setImageLoading] = useState(false);
   const [editProfile, setEditProfile] = useState(false);
   const [editImage, setEditImage] = useState(false);
   const [changePassword, setChangePassword] = useState(false);
@@ -287,6 +289,10 @@ function Profile() {
 
       formData.append("image", image);
 
+      if (imageLoading) return;
+
+      setImageLoading(true);
+
       const { data } = await axios.post("/profile/image", formData);
 
       if (data.success) {
@@ -299,6 +305,8 @@ function Profile() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setImageLoading(false);
     }
   };
 
@@ -307,6 +315,10 @@ function Profile() {
       setEditImage(false);
 
       if (!profile.avatar) return;
+
+      if (imageLoading) return;
+
+      setImageLoading(true);
 
       const { data } = await axios.delete("/profile/image");
 
@@ -319,18 +331,21 @@ function Profile() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setImageLoading(false);
     }
   };
 
   const handleOuterClick = () => {
     if (editImage) setEditImage(false);
   };
+
   return (
     <>
       <div className="profile" onClick={handleOuterClick}>
         <div className="card">
           <header>
-            <h4>PROFILE</h4>{" "}
+            <h4>PROFILE</h4>
             {membership && (
               <strong>
                 Premium &nbsp;<i className="bi bi-check-circle"></i>
@@ -339,6 +354,11 @@ function Profile() {
           </header>
           <div className="body">
             <div className="profileImage">
+              {imageLoading && (
+                <div className="spinner">
+                  <Spinner />
+                </div>
+              )}
               <img
                 src={
                   profile?.avatar ? profile.avatar.trim() : "/images/avatar.jpg"

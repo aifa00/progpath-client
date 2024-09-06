@@ -13,17 +13,25 @@
   margin: 5rem auto;
 }
 
+.single-program .dashboard .post .content {
+  font-size: x-large;
+}
+
 .single-program .chat-button {
   position: fixed;
   bottom: 7rem;
   right: 3rem;
-  padding: 0.5rem;
+  padding: 12px;
   border-radius: 20px;
   background-color: var(--color-violet);
   border: none;
   display: flex;
   align-items: center;
   z-index: 10;
+}
+
+.single-program .chat-button:hover {
+  background-color: var(--color-hover-violet);
 }
 
 .single-program .dashboard .post .top h1 {
@@ -78,6 +86,10 @@
   border: none;
   display: flex;
   align-items: center;
+}
+
+.single-program .summarize-button:hover {
+  background-color: var(--color-blue);
 }
 
 .single-program .summarize-button img {
@@ -146,6 +158,14 @@
     height: 20px;
   }
 
+  .single-program .dashboard .post .content {
+    font-size: medium;
+  }
+
+  .single-program .dashboard .post .content p {
+    font-size: medium !important;
+  }
+
   .single-program .dashboard .post .likes-and-comments span {
     font-size: small;
   }
@@ -160,10 +180,6 @@
 
   .single-program .dashboard .post .top small {
     font-size: xx-small;
-  }
-
-  .single-program .dashboard .post .content li {
-    font-size: x-small;
   }
 
   .single-program .summarize-button {
@@ -219,10 +235,6 @@
   }
 
   .single-program .dashboard .post .likes-and-comments span {
-    font-size: small;
-  }
-
-  .single-program .dashboard .post .content li {
     font-size: small;
   }
 

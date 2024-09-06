@@ -121,6 +121,10 @@ button {
   background-color: rgba(72, 72, 72, 0.263);
 }
 
+.singleProject .dashboard .tasks .addTask #addTaskButton:hover {
+  background-color: var(--color-violet);
+}
+
 .singleProject .dashboard .tasks .addTask button:hover {
   background-color: rgba(72, 72, 72, 0.1);
 }
@@ -149,6 +153,7 @@ button {
 }
 
 .singleProject .dashboard .tasks .cards {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 }
@@ -169,6 +174,7 @@ button {
 }
 
 .singleProject .dashboard .tasks .cards .card {
+  position: relative;
   padding: 10px;
   width: 15rem;
   background-color: var(--color-tertiary);
@@ -180,8 +186,8 @@ button {
   font-weight: 100;
 }
 
-.singleProject .dashboard .tasks .cards .card {
-  position: relative;
+.singleProject .dashboard .tasks .cards .card:hover {
+  background-color: var(--color-hover-gray);
 }
 
 .singleProject .dashboard .tasks .cards .card .title,

@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0c0b11 !important;
+  background-color: var(--color-body);
 }
 
 code {
@@ -45,22 +45,4 @@ div .rc-tooltip-placement-bottom {
 div .rc-tooltip-placement-left,
 div .rc-tooltip-placement-right {
   padding: 0 4px 0 4px;
-}
-
-:root {
-  --color-primary: #000000;
-  --color-secondary: #0c0b11;
-  --color-tertiary: #1a1a1a;
-  --color-blue: #1859ff;
-  --color-violet: rgb(148, 102, 148);
-
-  --color-bg-gray: rgba(55, 55, 55, 0.263);
-  --color-hover-gray: rgba(93, 93, 93, 0.368);
-
-  --color-success: #23bf48;
-  --color-error: #bc1324;
-  --color-warning: #ffc107;
-
-  --color-text-primary: #bebebe;
-  --color-text-secondary: #8a8a8a;
 }

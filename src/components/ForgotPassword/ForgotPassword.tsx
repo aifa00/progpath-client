@@ -54,7 +54,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({
   };
 
   return (
-    <div className="dialog-overlay">
+    <div className="dialog-overlay" onClick={(e) => e.stopPropagation()}>
       <i
         onClick={() => setShowForgotPasswordForm(false)}
         className="bi bi-x-lg close-button"
@@ -87,7 +87,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({
         <div className="submit-button">
           <button
             onClick={handleSubmit}
-            className={loading ? "btn-disabled" : "btn-secondary"}
+            className={loading ? "btn-disabled" : "btn-primary"}
           >
             SUBMIT
           </button>

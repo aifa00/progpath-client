@@ -117,7 +117,9 @@ const ChatBox: React.FC<ChatBoxProps> = ({ setOpenChatBox }) => {
         ) : (
           <div>
             <div className="chat-header">
-              <strong>Chats</strong>
+              <strong>
+                Chats <i className="fa-solid fa-comments"></i>
+              </strong>
               <Tooltip
                 placement="bottom"
                 overlay={<span>Search</span>}
@@ -139,7 +141,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({ setOpenChatBox }) => {
 
             {searchNotFoundError && (
               <p id="no-results-found-text">
-                <i className="bi bi-emoji-frown-fill"></i> No results found
+                <i className="bi bi-emoji-frown-fill"></i>{" "}
+                <strong>No results found</strong>
               </p>
             )}
 
@@ -189,18 +192,12 @@ const ChatBox: React.FC<ChatBoxProps> = ({ setOpenChatBox }) => {
                           </p>
                         </div>
                       </div>
-
-                      {/* {chat?.unreadCount > 0 && (
-                        <div className="unreadMessageCount">
-                          {chat.unreadCount}
-                        </div>
-                      )} */}
                     </div>
                   ))
                 : !searchNotFoundError && (
                     <p className="info-text">
-                      <i className="bi bi-chat-quote-fill"></i> No chats! Search
-                      users to start chat
+                      <i className="bi bi-chat-quote-fill"></i>
+                      &nbsp;No chats! Search users to start a chat
                     </p>
                   )}
             </div>

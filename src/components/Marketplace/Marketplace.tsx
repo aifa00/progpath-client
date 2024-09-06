@@ -11,6 +11,7 @@ import { RootState } from "../../redux/store";
 import { setPremiumUser } from "../../redux/userSlice";
 import ChatBox from "../ChatBox/ChatBox";
 import Tooltip from "rc-tooltip";
+import Spinner from "../../assets/Spinner";
 
 interface ProgramsType {
   _id: string;
@@ -24,6 +25,7 @@ interface ProgramsType {
 const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 function Marketplace() {
+  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
@@ -47,6 +49,8 @@ function Marketplace() {
 
   const fetchPrograms = async () => {
     try {
+      setLoading(true);
+
       const { data } = await axios.get(`/marketplace`, {
         params: {
           search,
@@ -66,6 +70,8 @@ function Marketplace() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -92,24 +98,7 @@ function Marketplace() {
   };
 
   const toggleDropdown = (value: string) => {
-    if (value === "sort") {
-      activeDropdown === "sort"
-        ? setActiveDropdown("")
-        : setActiveDropdown("sort");
-    } else if (value === "filter") {
-      activeDropdown === "filter"
-        ? setActiveDropdown("")
-        : setActiveDropdown("filter");
-    }
-  };
-
-  const onInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
-    e.target.style.borderBottom = "2px solid var(--color-blue)";
-    if (activeDropdown) setActiveDropdown("");
-  };
-
-  const onInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    e.target.style.borderBottom = "1px solid var(--color-text-primary)";
+    value && setActiveDropdown(value);
   };
 
   const handleSearch = (e: any) => {
@@ -131,21 +120,23 @@ function Marketplace() {
   const handleOuterClick = () => {
     if (activeDropdown) setActiveDropdown("");
   };
+
   return (
     <div className="marketplace" onClick={handleOuterClick}>
       <div className="main">
         <div className="body">
           <div className="utils">
             <div className="search-input">
-              <i id="searchIcon" className="bi bi-search"></i>
+              <i
+                onClick={() => fetchPrograms()}
+                id="searchIcon"
+                className="bi bi-search"
+              ></i>
               <input
-                onFocus={onInputFocus}
-                onBlur={onInputBlur}
                 onKeyDown={handleSearch}
-                className="search"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                type="search"
+                type="text"
                 placeholder="search by title, author, language, framework, technologies..."
               />
             </div>
@@ -155,10 +146,8 @@ function Marketplace() {
                 <button
                   onClick={() => toggleDropdown("filter")}
                   style={{
-                    borderLeft:
-                      activeDropdown === "filter"
-                        ? "2px solid var(--color-blue)"
-                        : "",
+                    backgroundColor:
+                      activeDropdown === "filter" ? "var(--color-violet)" : "",
                   }}
                 >
                   Filter &nbsp; <i className="bi bi-filter"></i>
@@ -173,7 +162,7 @@ function Marketplace() {
                       className="dropdown-option"
                       onClick={() => handleFilter("week")}
                     >
-                      <p>Uploaded last Week</p>
+                      <p>Uploaded this Week</p>
                       {duration === "week" && (
                         <span>
                           <i className="fa-solid fa-check"></i>
@@ -184,7 +173,7 @@ function Marketplace() {
                       className="dropdown-option"
                       onClick={() => handleFilter("month")}
                     >
-                      <p>Uploaded last Month</p>
+                      <p>Uploaded this Month</p>
                       {duration === "month" && (
                         <span>
                           <i className="fa-solid fa-check"></i>
@@ -195,7 +184,7 @@ function Marketplace() {
                       className="dropdown-option"
                       onClick={() => handleFilter("year")}
                     >
-                      <p>Uploaded last Year</p>
+                      <p>Uploaded this Year</p>
                       {duration === "year" && (
                         <span>
                           <i className="fa-solid fa-check"></i>
@@ -210,10 +199,8 @@ function Marketplace() {
                 <button
                   onClick={() => toggleDropdown("sort")}
                   style={{
-                    borderLeft:
-                      activeDropdown === "sort"
-                        ? "2px solid var(--color-blue)"
-                        : "",
+                    backgroundColor:
+                      activeDropdown === "sort" ? "var(--color-violet)" : "",
                   }}
                 >
                   Sort &nbsp; <i className="bi bi-sort-down-alt"></i>
@@ -307,42 +294,50 @@ function Marketplace() {
             </div>
           </div>
 
-          <div className="content">
-            {programs.map((program: ProgramsType) => (
-              <div
-                key={program._id}
-                className="card"
-                onClick={() => openProgram(program._id)}
-              >
-                <img
-                  src={
-                    program.image
-                      ? program.image
-                      : "/images/image-placeholder.jpg"
-                  }
-                  alt="placeholder"
-                />
-                <h5>{program.title?.split(" ")?.slice(0, 5).join(" ")}</h5>
-                <div className="description">
-                  <p>{extractTextFromHtml(program.description)}</p>
+          {loading ? (
+            <div className="spinner">
+              <Spinner />
+            </div>
+          ) : (
+            <div className="content">
+              {programs.map((program: ProgramsType) => (
+                <div
+                  key={program._id}
+                  className="card"
+                  onClick={() => openProgram(program._id)}
+                >
+                  <img
+                    src={
+                      program.image
+                        ? program.image
+                        : "/images/image-placeholder.jpg"
+                    }
+                    alt="placeholder"
+                  />
+                  <h5>{program.title?.split(" ")?.slice(0, 5).join(" ")}</h5>
+                  <div className="description">
+                    <p>{extractTextFromHtml(program.description)}</p>
+                  </div>
+                  <div className="likes-and-comments">
+                    <i className="bi bi-heart"></i> {program.likesCount} &nbsp;
+                    &nbsp;
+                    <i className="bi bi-chat-dots"></i> {program.commentsCount}
+                  </div>
                 </div>
-                <div className="likes-and-comments">
-                  <i className="bi bi-heart"></i> {program.likesCount} &nbsp;
-                  &nbsp;
-                  <i className="bi bi-chat-dots"></i> {program.commentsCount}
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
-          <Pagination
-            from={from}
-            to={to}
-            page={page}
-            totalResults={totalResults}
-            totalPages={totalPages}
-            setPage={setPage}
-          />
+          {!loading && (
+            <Pagination
+              from={from}
+              to={to}
+              page={page}
+              totalResults={totalResults}
+              totalPages={totalPages}
+              setPage={setPage}
+            />
+          )}
         </div>
       </div>
       {addProgramForm && (

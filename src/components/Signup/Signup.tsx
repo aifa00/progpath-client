@@ -6,9 +6,11 @@ import axios from "../../axiosConfig";
 import { setAlert } from "../../redux/alertSlice";
 import Otp from "../Otp/Otp";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { ClipLoader } from "react-spinners";
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [otpForm, setOtpForm] = useState(false);
   const [email, setEmail] = useState("");
@@ -128,14 +130,20 @@ const Signup = () => {
       }
 
       try {
-        setOtpForm(true);
+        if (loading) return;
+
+        setLoading(true);
+
         const res = await axios.post(`/register`, formInputs);
 
         if (res.data.success) {
+          setOtpForm(true);
           setEmail(res.data.email);
         }
       } catch (error: any) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -148,10 +156,14 @@ const Signup = () => {
     dispatch(setForm("login"));
   };
 
+  const handleOuterClick = () => {
+    dispatch(resetForm());
+  };
+
   return (
     <>
-      <div className="dialog-overlay">
-        <div className="signup-form">
+      <div className="dialog-overlay" onClick={handleOuterClick}>
+        <div className="signup-form" onClick={(e) => e.stopPropagation()}>
           <button
             className="close-button"
             onClick={() => dispatch(resetForm())}
@@ -229,8 +241,19 @@ const Signup = () => {
             </label>
           </div>
 
-          <button className="btn-primary signup-button" onClick={handleSubmit}>
-            SIGNUP
+          <button
+            className={
+              !loading
+                ? "btn-primary signup-button"
+                : "btn-disabled signup-button"
+            }
+            onClick={handleSubmit}
+          >
+            {!loading ? (
+              "SIGNUP"
+            ) : (
+              <ClipLoader size={10} color="var(--color-text-secondary)" />
+            )}
           </button>
 
           <p className="signup-link">

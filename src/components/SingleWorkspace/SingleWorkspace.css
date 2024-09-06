@@ -1,151 +1,155 @@
 .singleWorkspace {
-    display: flex;
-    height: 100vh; 
+  display: flex;
+  height: 100vh;
 }
 
 .singleWorkspace .dashboard {
-    background-color: var(--color-secondary);
-    padding: 20px;
-    flex-grow: 1;
+  background-color: var(--color-secondary);
+  padding: 20px;
+  flex-grow: 1;
 }
 
 .singleWorkspace .innerdiv-dashboard {
-    position: relative;
-    background-color: var(--color-secondary);
-    min-height: 100%;
-    border-radius: 3px;
-    overflow-y: scroll;
-    box-shadow: 0 0 20px 2px rgba(144, 0, 255, 0.079), 0 0 20px 4px rgba(144, 0, 255, 0.079);    
+  position: relative;
+  background-color: var(--color-secondary);
+  min-height: 100%;
+  border-radius: 3px;
+  overflow-y: scroll;
+  box-shadow: 0 0 20px 2px rgba(144, 0, 255, 0.079),
+    0 0 20px 4px rgba(144, 0, 255, 0.079);
 }
 
 .singleWorkspace .innerdiv-dashboard::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .singleWorkspace .dashboard .body {
-    position: absolute;
-    top: 5%;
-    left: 5%; 
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    color: var(--color-text-primary); 
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  color: var(--color-text-primary);
 }
 
-.singleWorkspace .dashboard .header { 
- color: var(--color-text-secondary);
- display: flex;
- justify-content: space-between;
- align-items: center;
- width: 100%;
- border-bottom: 1px solid var(--color-text-primary);
- padding-bottom: 1%;
- margin-bottom: 1%;
+.singleWorkspace .dashboard .header {
+  color: var(--color-text-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid var(--color-text-primary);
+  padding-bottom: 1%;
+  margin-bottom: 1%;
 }
 
 .singleWorkspace .dashboard .header #inviteIcon {
-    display: none;
+  display: none;
 }
 
 .singleWorkspace .dashboard .header .right {
-    position: relative;
-    display: flex;
-    justify-content: end;
-    flex: 1; 
-    align-items: flex-start;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  flex: 1;
+  align-items: flex-start;
 }
 
 .singleWorkspace .dashboard .header .left {
-    flex: 2;
+  flex: 2;
 }
 
 .singleWorkspace .dashboard .header .left i:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.singleWorkspace .dashboard .header .right .inviteButton, .inviteLink {
-    color: var(--color-text-primary);
-    font-weight: 600;
-    padding: 5px 10px;
-    cursor: pointer;
+.singleWorkspace .dashboard .header .right .inviteButton,
+.inviteLink {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 .singleWorkspace .dashboard .header .inviteLink {
-    border: none;
-    border-radius: 3px;
-    background-color: var(--color-tertiary);
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-tertiary);
 }
 
 .singleWorkspace .dashboard .header .inviteLink:hover {
-    background-color: rgb(77, 77, 77);
+  background-color: rgb(77, 77, 77);
 }
 
-.singleWorkspace .dashboard .header .inviteButton { 
-    background: transparent;
-    border: 2px solid #1859FF;
-    border-radius: 3px;
-    box-shadow: 0 0 20px 2px rgba(144, 0, 255, 0.24), 0 0 20px 4px rgba(143, 0, 255, 0.24);
-    margin-inline: 20px;
+.singleWorkspace .dashboard .header .inviteButton {
+  background: transparent;
+  border: 2px solid #1859ff;
+  border-radius: 3px;
+  margin-inline: 20px;
+}
+
+.singleWorkspace .dashboard .header .inviteButton:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
 }
 
 .singleWorkspace .dashboard .header .right .menu {
-    position: absolute;
-    top: 100%;
-    color: var(--color-text-primary);
-    width : 50%;
-    background-color: var(--color-tertiary);
-    z-index: 1;    
-    box-shadow: 0 0 24px 2px rgba(0, 0, 0, 0.5), 0 0 20px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
+  position: absolute;
+  top: 100%;
+  color: var(--color-text-primary);
+  width: 50%;
+  background-color: var(--color-tertiary);
+  z-index: 1;
+  box-shadow: 0 0 24px 2px rgba(0, 0, 0, 0.5), 0 0 20px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
 }
 
 .singleWorkspace .dashboard .header .right .menu .links {
-    padding: 10px;    
+  padding: 10px;
 }
 
 .singleWorkspace .dashboard .header .right .menu .links:hover {
-    background-color: var(--color-primary);
-    cursor: pointer;
+  background-color: var(--color-primary);
+  cursor: pointer;
 }
 
 .singleWorkspace .dashboard .header .right #menuIcon {
-    font-size: large;
+  font-size: large;
 }
 
-
-
 .singleWorkspace .dashboard .header .invitations {
-    position: absolute;
-    display: flex;
-    flex-direction: column;    
-    z-index: 1000;
-    padding: 5%;
-    top: 3rem;
-    right: 0;
-    background-color: var(--color-tertiary);
-    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 3px; 
-    width: 80%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 5%;
+  top: 3rem;
+  right: 0;
+  background-color: var(--color-tertiary);
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  width: 80%;
 }
 
 .singleWorkspace .dashboard .header .invitations .addEmail {
-    padding-block: 5%;
-    margin-block: 5%;
+  padding-block: 5%;
+  margin-block: 5%;
 }
 
 .singleWorkspace .dashboard .header .invitations input {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: var(--color-text-primary);
-    padding-block: 3%;
-    width: 70%;
-    border-bottom: 1px solid var(--color-text-primary);
-    margin-left: 2%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  padding-block: 3%;
+  width: 70%;
+  border-bottom: 1px solid var(--color-text-primary);
+  margin-left: 2%;
 }
 
 .singleWorkspace .dashboard .header .invitations .addButton {
-  width: 20%;   
+  width: 20%;
   margin-left: 5%;
   padding-block: 4%;
   background: transparent;
@@ -157,333 +161,343 @@
 }
 
 .singleWorkspace .dashboard .header .invitations .sendInvitations {
-    color: var(--color-text-primary);
-    font-weight: 600;
-    padding: 5px 10px;    
-    cursor: pointer;
-    background: transparent;
-    border: 2px solid #1859FF;
-    border-radius: 3px;
-    box-shadow: 0 0 20px 2px rgba(144, 0, 255, 0.24), 0 0 20px 4px rgba(143, 0, 255, 0.24);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #1859ff;
+  border-radius: 3px;
+  background-color: var(--color-blue);
 }
 
+.singleWorkspace .dashboard .header .invitations .sendInvitations:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+}
 
 .singleWorkspace .dashboard .header .invitations .addButton:hover {
-    background-color: rgba(130, 130, 130, 0.333);
+  background-color: rgba(130, 130, 130, 0.333);
 }
 
 .singleWorkspace .dashboard .header .invitations .recipients {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(117, 117, 117, 0.082);
-    border-radius: 12px;
-    padding-block: 3%;
-    padding-inline: 5%;
-    margin-top: 3%;
-    color: var(--color-text-primary);
-    font-size: small;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(117, 117, 117, 0.082);
+  border-radius: 12px;
+  padding-block: 3%;
+  padding-inline: 5%;
+  margin-top: 3%;
+  color: var(--color-text-primary);
+  font-size: small;
 }
 
-.singleWorkspace .dashboard .body .settings {  
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    margin-bottom: 3%;
+.singleWorkspace .dashboard .body .settings {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  margin-bottom: 3%;
 }
 
 .singleWorkspace .dashboard .body .settings div {
-    position: relative;
-    margin-left: 3%;    
-    padding: 6px 10px;
-    background-color: var(--color-tertiary);   
-    width: 22%;
-    text-align: center;
+  position: relative;
+  margin-left: 3%;
+  padding: 6px 10px;
+  background-color: var(--color-tertiary);
+  width: 22%;
+  text-align: center;
+  border-radius: 10px;
 }
 
-.singleWorkspace .dashboard .body .settings div p, i {    
-    cursor: pointer;
-    font-weight: 600;
+.singleWorkspace .dashboard .body .settings div:hover {
+  background-color: var(--color-violet);
+}
+
+.singleWorkspace .dashboard .body .settings div p,
+i {
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .singleWorkspace .dashboard .body .settings div ul {
-    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(0, 0, 0, 0.5);
-    background-color: var(--color-tertiary);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 3rem;
-    left: 0;        
-    width: 100%;
-    z-index: 1;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(0, 0, 0, 0.5);
+  background-color: var(--color-tertiary);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .singleWorkspace .dashboard .body .settings div li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 3%;
-    padding-left: 5%;
-    padding-block: 2%;
-    margin-block: 3%;
-    font-size: small;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 3%;
+  padding-left: 5%;
+  padding-block: 2%;
+  margin-block: 3%;
+  font-size: small;
 }
 
 .singleWorkspace .dashboard .body .settings div li:hover {
-    background-color: rgba(130, 130, 130, 0.078);
+  background-color: rgba(130, 130, 130, 0.078);
 }
 
 .singleWorkspace .dashboard .body .settings div li img {
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;    
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
 }
 
 .singleWorkspace .dashboard .body .settings div li .remove-collaborator-button,
 .singleWorkspace .dashboard .body .settings div li .cancel-invitation-button {
-    color: rgb(255, 43, 43);
-    cursor: pointer;
-    padding: 1% 5%; 
-    border-radius: 12px;
+  color: rgb(255, 43, 43);
+  cursor: pointer;
+  padding: 1% 5%;
+  border-radius: 12px;
 }
 
 .singleWorkspace .dashboard .body .settings div li .workspace-admin {
-    color: var(--color-text-primary);
-    padding: 1% 5%;
-    border-radius: 12px;
+  color: var(--color-text-primary);
+  padding: 1% 5%;
+  border-radius: 12px;
 }
 
-.singleWorkspace .dashboard .body .starred-projects, .projects { 
-    padding-block: 1%;    
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.singleWorkspace .dashboard .body .starred-projects,
+.projects {
+  padding-block: 1%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-
-.singleWorkspace .dashboard .body .starred-projects div, .projects div {
-    display: flex;
-    flex-wrap: wrap;
+.singleWorkspace .dashboard .body .starred-projects div,
+.projects div {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.singleWorkspace .dashboard .body .starred-projects a, .projects a {
-    position: relative;
-    padding: 30px 5px;
-    margin-right: 15px;
-    margin-top: 15px;
-    width: 18%;
-    height: 2rem;
-    text-align: center;
-    text-decoration: none;
-    color: var(--color-text-primary);
-    border-radius: 3px;
+.singleWorkspace .dashboard .body .starred-projects a,
+.projects a {
+  position: relative;
+  padding: 30px 5px;
+  margin-right: 15px;
+  margin-top: 15px;
+  width: 18%;
+  height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  border-radius: 3px;
 }
 
-
-.singleWorkspace .dashboard .body .starred-projects a:hover, .projects a:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+.singleWorkspace .dashboard .body .starred-projects a:hover,
+.projects a:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 .singleWorkspace .dashboard .body .settings #workspace-collaborators,
 .singleWorkspace .dashboard .body .settings #invitations-send {
-    display: none;
+  display: none;
 }
 
 .singleWorkspace .dashboard #add-project-btn {
+  display: none;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .singleWorkspace .dashboard {
+    padding: 10px;
+  }
+
+  .singleWorkspace .dashboard .body {
+    top: 1%;
+  }
+
+  .singleWorkspace .dashboard .header .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .singleWorkspace .dashboard .header .right .inviteButton {
     display: none;
+  }
+
+  .singleWorkspace .dashboard .header .right #inviteIcon {
+    display: inline;
+    margin-top: 4px;
+    margin-right: 5px;
+    font-size: small;
+  }
+
+  .singleWorkspace .dashboard .header .right #menuIcon {
+    font-size: small;
+  }
+
+  .singleWorkspace .dashboard .header .invitations {
+    width: 15rem;
+    top: 110%;
+    padding: 10px;
+  }
+
+  .singleWorkspace .dashboard .header .invitations .recipients {
+    padding-block: 1%;
+    align-items: center;
+    font-size: small;
+  }
+
+  .singleWorkspace .dashboard .body .settings div p {
+    display: none;
+  }
+
+  .singleWorkspace .dashboard .body .settings {
+    position: relative;
+  }
+
+  .singleWorkspace .dashboard .body .settings div {
+    padding: 0;
+    background-color: transparent;
+    position: initial;
+  }
+
+  .singleWorkspace .dashboard .body .settings #workspace-collaborators,
+  .singleWorkspace .dashboard .body .settings #invitations-send {
+    display: inline;
+    background: transparent;
+    border: none;
+  }
+
+  .singleWorkspace .dashboard .body .settings div p,
+  i {
+    cursor: pointer;
+    font-weight: 100;
+  }
+
+  .singleWorkspace .dashboard .body .settings div ul {
+    top: 2rem;
+    right: 0;
+    width: 100%;
+  }
+
+  .singleWorkspace .dashboard .body .starred-projects,
+  .projects {
+    margin-top: 30px;
+  }
+
+  .singleWorkspace .dashboard .body .starred-projects a,
+  .projects a {
+    padding: 15px 5px;
+    width: 90%;
+    height: 1rem;
+    font-size: x-small;
+  }
+
+  .singleWorkspace .dashboard #add-project-btn {
+    display: inline;
+    margin-top: 10px;
+  }
+
+  .singleWorkspace .dashboard .body .addProjectButton {
+    display: none;
+  }
 }
-
-
-
-@media (min-width:300px) and (max-width:500px) {
-    .singleWorkspace .dashboard {
-        padding: 10px;
-    }
-
-    .singleWorkspace .dashboard .body {
-        top: 1%;
-    }
- 
-    .singleWorkspace .dashboard .header .right {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .singleWorkspace .dashboard .header .right .inviteButton {
-        display: none;
-    }
-     
-    .singleWorkspace .dashboard .header .right #inviteIcon {
-        display: inline;
-        margin-top: 4px;
-        margin-right: 5px;
-        font-size: small;
-    }
-
-    .singleWorkspace .dashboard .header .right #menuIcon {
-        font-size: small;
-    }
-
-    .singleWorkspace .dashboard .header .invitations {
-        width: 15rem;
-        top: 110%;
-        padding: 10px;
-    }
-
-    .singleWorkspace .dashboard .header .invitations .recipients {        
-        padding-block: 1%;
-        align-items: center;        
-        font-size: small;
-    }
-
-    .singleWorkspace .dashboard .body .settings div p {
-        display: none;
-    }
-
-    .singleWorkspace .dashboard .body .settings {
-        position: relative;
-    }
-
-    .singleWorkspace .dashboard .body .settings div {
-        padding: 0;  
-        background-color: transparent;
-        position: initial;
-    }
-
-    .singleWorkspace .dashboard .body .settings #workspace-collaborators,
-    .singleWorkspace .dashboard .body .settings #invitations-send {
-        display: inline;
-        background: transparent;
-        border: none;
-    }
-    
-    .singleWorkspace .dashboard .body .settings div p, i {    
-        cursor: pointer;
-        font-weight: 100;
-    }
-    
-    .singleWorkspace .dashboard .body .settings div ul {        
-        top: 2rem;
-        right: 0;
-        width: 100%;
-    }
-
-    .singleWorkspace .dashboard .body .starred-projects, .projects {
-        margin-top: 30px;
-    }
-   
-    .singleWorkspace .dashboard .body .starred-projects a, .projects a {        
-        padding: 15px 5px;        
-        width: 90%;
-        height: 1rem;        
-        font-size: x-small;
-    }
-
-    .singleWorkspace .dashboard #add-project-btn {
-        display: inline;margin-top: 10px;
-    }
-
-    .singleWorkspace .dashboard .body .addProjectButton {
-        display: none;
-    }
-}
-
-
-
 
 @media (min-width: 501px) and (max-width: 1000px) {
-    .singleWorkspace .dashboard {
-        padding: 10px;
-    }
+  .singleWorkspace .dashboard {
+    padding: 10px;
+  }
 
-    .singleWorkspace .dashboard .body {
-        top: 1%;
-    }
- 
-    .singleWorkspace .dashboard .header .right {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
+  .singleWorkspace .dashboard .body {
+    top: 1%;
+  }
 
-    .singleWorkspace .dashboard .header .right .inviteButton {
-        display: none;
-    }
-     
-    .singleWorkspace .dashboard .header .right #inviteIcon {
-        display: inline;
-        margin-top: 4px;
-        margin-right: 5px;
-        font-size: small;
-    }
+  .singleWorkspace .dashboard .header .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
-    .singleWorkspace .dashboard .header .right #menuIcon {
-        font-size: small;
-    }
+  .singleWorkspace .dashboard .header .right .inviteButton {
+    display: none;
+  }
 
-    .singleWorkspace .dashboard .header .invitations {
-        width: 15rem;
-        top: 110%;
-        font-size: x-small;
-        padding: 10px;
-    }
+  .singleWorkspace .dashboard .header .right #inviteIcon {
+    display: inline;
+    margin-top: 4px;
+    margin-right: 5px;
+    font-size: small;
+  }
 
-    .singleWorkspace .dashboard .header .invitations .recipients {        
-        padding-block: 1%;
-        align-items: center;        
-        font-size: small;
-    }
+  .singleWorkspace .dashboard .header .right #menuIcon {
+    font-size: small;
+  }
 
-    .singleWorkspace .dashboard .body .settings div p {
-        display: none;
-    }
+  .singleWorkspace .dashboard .header .invitations {
+    width: 15rem;
+    top: 110%;
+    font-size: x-small;
+    padding: 10px;
+  }
 
-    .singleWorkspace .dashboard .body .settings {
-        position: relative;
-    }
+  .singleWorkspace .dashboard .header .invitations .recipients {
+    padding-block: 1%;
+    align-items: center;
+    font-size: small;
+  }
 
-    .singleWorkspace .dashboard .body .settings div {
-        padding: 0;  
-        background-color: transparent;
-        position: initial;
-    }
+  .singleWorkspace .dashboard .body .settings div p {
+    display: none;
+  }
 
-    .singleWorkspace .dashboard .body .settings #workspace-collaborators,
-    .singleWorkspace .dashboard .body .settings #invitations-send {
-        display: inline;
-        background: transparent;
-        border: none;
-    }
-    
-    .singleWorkspace .dashboard .body .settings div p, i {    
-        cursor: pointer;
-        font-weight: 100;
-        font-size: medium;
-    }
+  .singleWorkspace .dashboard .body .settings {
+    position: relative;
+    margin-top: 10px;
+  }
 
-    .singleWorkspace .dashboard .body .settings div ul {        
-        top: 2rem;  
-        width: 100%;
-    }
+  .singleWorkspace .dashboard .body .settings div {
+    background-color: transparent;
+    position: initial;
+  }
 
-    .singleWorkspace .dashboard .body .starred-projects, .projects {
-        margin-top: 30px;
-    }
-   
-    .singleWorkspace .dashboard .body .starred-projects a, .projects a {        
-        padding: 15px 5px;        
-        width: 10rem;
-        height: 1.5rem;
-        font-size: x-small;
-    }
+  .singleWorkspace .dashboard .body .settings #workspace-collaborators,
+  .singleWorkspace .dashboard .body .settings #invitations-send {
+    display: inline;
+    background: transparent;
+    border: none;
+  }
 
-    .singleWorkspace .dashboard .body .addProjectButton { 
-        font-size: x-small; 
-    }
+  .singleWorkspace .dashboard .body .settings div p,
+  i {
+    cursor: pointer;
+    font-weight: 100;
+    font-size: medium;
+  }
+
+  .singleWorkspace .dashboard .body .settings div ul {
+    top: 2rem;
+    width: 100%;
+  }
+
+  .singleWorkspace .dashboard .body .starred-projects,
+  .projects {
+    margin-top: 30px;
+  }
+
+  .singleWorkspace .dashboard .body .starred-projects a,
+  .projects a {
+    padding: 15px 5px;
+    width: 10rem;
+    height: 1.5rem;
+    font-size: x-small;
+  }
+
+  .singleWorkspace .dashboard .body .addProjectButton {
+    font-size: x-small;
+  }
 }
-
-
-
-

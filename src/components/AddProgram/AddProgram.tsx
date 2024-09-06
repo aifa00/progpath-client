@@ -177,6 +177,11 @@ const AddProgram: React.FC<AddProgramProps> = ({
 
   return (
     <div className="form-overlay">
+      <i
+        onClick={handleCloseForm}
+        className="bi bi-x-lg close-button"
+        style={{ position: "fixed" }}
+      ></i>
       <div
         className="addprogram-form"
         style={{
@@ -188,11 +193,6 @@ const AddProgram: React.FC<AddProgramProps> = ({
             "1px solid var(--color-error)",
         }}
       >
-        <i
-          onClick={handleCloseForm}
-          className="fa-solid fa-x fa-lg"
-          style={{ position: "absolute", top: "1.5rem", right: "1rem" }}
-        ></i>
         <br /> <h5>UPLOAD IMAGES *</h5> <br />
         <div className="image-group">
           <label htmlFor="image-one">

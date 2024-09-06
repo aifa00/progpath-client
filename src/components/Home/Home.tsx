@@ -7,6 +7,7 @@ import axios from "../../axiosConfig";
 import Task from "../Task/Task";
 import { useNavigate } from "react-router-dom";
 import Tooltip from "rc-tooltip";
+import Spinner from "../../assets/Spinner";
 
 interface Task {
   _id: string;
@@ -16,6 +17,7 @@ interface Task {
 }
 
 function Home() {
+  const [loading, setLoading] = useState<boolean>(false);
   const [result, setResult] = useState<any>({});
   const [taskStatusCounts, setTaskStatusCounts] = useState<any>([]);
   const [tasks, settasks] = useState<any>({
@@ -29,6 +31,8 @@ function Home() {
   useEffect(() => {
     const getHome = async () => {
       try {
+        setLoading(true);
+
         const { data } = await axios.get("/");
 
         if (data.success) {
@@ -43,6 +47,8 @@ function Home() {
         }
       } catch (error: any) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -75,6 +81,13 @@ function Home() {
     navigate(`/workspaces/${workspaceId}/projects/${projectId}?task=${taskId}`);
   };
 
+  if (loading)
+    return (
+      <div className="spinner">
+        <Spinner />
+      </div>
+    );
+
   return (
     <div className="homepage">
       <SideBar />
@@ -84,7 +97,7 @@ function Home() {
             <div>
               <h5>WORKSPACES</h5>
               <Tooltip
-                placement="bottom"
+                placement="top"
                 trigger={["hover"]}
                 overlay={<span>Workspaces({result.totalWorkspaces || 0})</span>}
               >
@@ -94,7 +107,7 @@ function Home() {
             <div>
               <h5>PROJECTS</h5>
               <Tooltip
-                placement="bottom"
+                placement="top"
                 trigger={["hover"]}
                 overlay={<span>Projects({result.totalProjects || 0})</span>}
               >
@@ -104,7 +117,7 @@ function Home() {
             <div>
               <h5>INVITATIONS</h5>
               <Tooltip
-                placement="bottom"
+                placement="top"
                 trigger={["hover"]}
                 overlay={<span>Invitations({result.newInvitations || 0})</span>}
               >
@@ -139,7 +152,10 @@ function Home() {
                   ))}
                 </ul>
               ) : (
-                <span>No tasks</span>
+                <span>
+                  <i className="bi bi-stickies-fill"></i>
+                  &nbsp; No tasks due today
+                </span>
               )}
             </div>
             <div className="due-tasks">
@@ -162,7 +178,10 @@ function Home() {
                   ))}
                 </ul>
               ) : (
-                <span>No tasks</span>
+                <span>
+                  <i className="bi bi-stickies-fill"></i>
+                  &nbsp; No tasks due tomorrow
+                </span>
               )}
             </div>
             <div className="due-tasks">
@@ -185,7 +204,10 @@ function Home() {
                   ))}
                 </ul>
               ) : (
-                <span>No tasks</span>
+                <span>
+                  <i className="bi bi-stickies-fill"></i>
+                  &nbsp; No tasks due this week
+                </span>
               )}
             </div>
           </div>

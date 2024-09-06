@@ -24,6 +24,7 @@ interface TaskProps {
   fetchTasks: () => void;
   workspaceMembers: Person[] | [];
   setTaskModal: React.Dispatch<React.SetStateAction<boolean>>;
+  fetchBurnOutGraph: () => void;
 }
 
 const Task: React.FC<TaskProps> = ({
@@ -32,6 +33,7 @@ const Task: React.FC<TaskProps> = ({
   workspaceMembers,
   fetchTasks,
   setTaskModal,
+  fetchBurnOutGraph,
 }) => {
   const profileImageUrl: any = useSelector<RootState>(
     (state) => state.user.avatar
@@ -186,6 +188,7 @@ const Task: React.FC<TaskProps> = ({
       formData.append("storyPoints", String(storyPoints));
 
       setloading(true);
+
       const { data } = await axios.post(
         `/workspaces/${workspaceId}/projects/${projectId}/tasks`,
         formData,
@@ -199,6 +202,7 @@ const Task: React.FC<TaskProps> = ({
         dispatch(
           setAlert({ message: "Task added succeessfully", type: "success" })
         );
+        fetchBurnOutGraph();
         closeTaskModal();
       }
     } catch (error) {
@@ -230,8 +234,10 @@ const Task: React.FC<TaskProps> = ({
       );
       if (data.success) {
         dispatch(setAlert({ message: "Task Saved", type: "success" }));
+        fetchBurnOutGraph();
         closeAllDropdowns();
         setEdit(false);
+        closeTaskModal();
       }
     } catch (error) {
       console.log(error);

@@ -18,7 +18,6 @@ var socket: Socket;
 const ChatPage: React.FC<any> = ({ fetchChats }) => {
   const selectedChat = TypedUseSelector((state) => state.chat.selectedChat);
   const [loading, setLoading] = useState<boolean>(false);
-
   const [userId] = useState(getUserId());
   const [messages, setMessages] = useState<any[]>([]);
   const [newMessage, setNewMessage] = useState("");
@@ -101,6 +100,7 @@ const ChatPage: React.FC<any> = ({ fetchChats }) => {
   const sendMessage = async () => {
     try {
       if (!newMessage) return;
+
       setNewMessage("");
 
       const { data } = await axios.post(`/chat/${selectedChat._id}/messages`, {
@@ -110,7 +110,6 @@ const ChatPage: React.FC<any> = ({ fetchChats }) => {
       if (data.success) {
         const newMessage = data.message;
         setMessages([...messages, newMessage]);
-
         socket.emit("new message", newMessage, selectedChat.user._id);
       }
     } catch (error) {
@@ -141,12 +140,15 @@ const ChatPage: React.FC<any> = ({ fetchChats }) => {
     try {
       if (!message) return;
 
+      setOpenDeleteDialog(false);
+
+      setMessages([...messages].filter((msg) => msg._id !== message._id));
+
       const { data } = await axios.delete(
         `/chat/messages/${message._id}?latestmessageid=${nextLatestMessageId}`
       );
 
       if (data.success) {
-        setMessages([...messages].filter((msg) => msg._id !== message._id));
         socket &&
           socket.emit(
             "delete message",
@@ -158,9 +160,8 @@ const ChatPage: React.FC<any> = ({ fetchChats }) => {
           );
       }
     } catch (error) {
+      setMessages([...messages]);
       console.log(error);
-    } finally {
-      setOpenDeleteDialog(false);
     }
   };
 
@@ -192,7 +193,7 @@ const ChatPage: React.FC<any> = ({ fetchChats }) => {
         {messages.map((message) => (
           <Tooltip
             key={message._id}
-            placement="top"
+            placement="right"
             trigger={["hover"]}
             overlay={<span>{getFormattedDate(message.timestamp)}</span>}
           >

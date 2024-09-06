@@ -1,6 +1,6 @@
 .login-form {
   width: 400px;
-  background-color: var(--color-tertiary);
+  background-color: #1a1a1a;
   padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
@@ -10,24 +10,13 @@
   flex-direction: column;
   align-items: center;
 }
-  
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  color: var(--color-text-primary);
-  font-size: xx-large;
-  cursor: pointer;
-}
 
 .login-form h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: var(--color-text-primary);
+  color: #bebebe;
 }
-  
+
 .login-form .input-group {
   position: relative;
   width: 80%;
@@ -38,15 +27,13 @@
   width: 90%;
   padding: 10px 5px;
   border: none;
-  border-bottom: 2px solid var(--color-text-secondary);
+  border-bottom: 2px solid #8a8a8a;
   outline: none;
-  font-size: 16px;
   background: transparent;
-  color: var(--color-text-primary);
+  color: #bebebe;
   margin-left: 10px;
-  font-size: small;
+  font-size: medium;
 }
-  
 
 .login-form .input-group label {
   font-size: smaller;
@@ -67,8 +54,9 @@
 .login-form .login-button {
   width: 70%;
   margin-top: 30px;
+  color: #bebebe;
 }
-  
+
 .login-form .login-link {
   text-align: center;
   margin-block: 10px;
@@ -81,8 +69,7 @@
   text-decoration: none;
   cursor: pointer;
 }
-  
-    
+
 .login-form .input-group .forgot-password {
   position: absolute;
   right: 20px;
@@ -92,9 +79,8 @@
   cursor: pointer;
 }
 
-
 .login-form .input-group .show-password {
-  color: var(--color-text-primary);
+  color: #bebebe;
   position: absolute;
   right: 20px;
   top: 10px;
@@ -126,13 +112,12 @@
   font-size: small;
   color: var(--color-warning);
 }
-  
 
 @media (min-width: 300px) and (max-width: 500px) {
   .login-form {
     width: 300px;
     padding: 5px;
-    padding-top: 10px; 
+    padding-top: 10px;
   }
 
   .close-button {
@@ -145,5 +130,10 @@
   .login-form .input-group input:not(:placeholder-shown) ~ label {
     transform: translateY(-10px);
     font-size: 12px;
+  }
+
+  .login-form .input-group .forgot-password {
+    font-size: x-small;
+    right: 5px;
   }
 }

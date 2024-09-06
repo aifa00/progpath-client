@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Logo from "../../assets/Logo";
 import "./Header.css";
 import axios from "../../axiosConfig";
@@ -7,11 +7,12 @@ import { removeUser } from "../../redux/userSlice";
 import { setForm } from "../../redux/formSlice";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../../redux/store";
+import { getTheme, setTheme } from "../../utils/appUtils";
 
 function Header() {
   const profileUrl: any = useSelector<RootState>((state) => state.user.avatar);
   const username: any = useSelector<RootState>((state) => state.user.username);
-
+  const [currTheme, setCurrTheme] = useState(getTheme());
   const [dropdown, setDropDown] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -32,6 +33,11 @@ function Header() {
     }
   };
 
+  const switchTheme = (theme: string) => {
+    setTheme(theme);
+    setCurrTheme(theme);
+  };
+
   const handleNavigateToProfile = async () => {
     navigate("/profile");
   };
@@ -40,16 +46,24 @@ function Header() {
     <>
       <div className="header-main">
         <div className="header-left" onClick={() => navigate("/")}>
-          <Logo />
+          {currTheme === "dark" ? (
+            <Logo />
+          ) : (
+            <img className="logo" src="/images/logo-2.png" alt="logo"></img>
+          )}
         </div>
         <div className="header-right">
           <img
-            onClick={() => setDropDown(!dropdown)}
+            onMouseEnter={() => setDropDown(true)}
             src={profileUrl ? profileUrl.trim() : "/images/avatar.jpg"}
             alt="profile"
           />
           {dropdown && (
-            <div className="dropdown-menu" style={{ top: "50px" }}>
+            <div
+              onMouseLeave={() => setDropDown(false)}
+              className="dropdown-menu"
+              style={{ top: "50px" }}
+            >
               <div
                 onClick={handleNavigateToProfile}
                 className="dropdown-option"
@@ -62,6 +76,21 @@ function Header() {
                 />
                 <p>{username}</p>
               </div>
+
+              <div
+                onClick={() =>
+                  switchTheme(currTheme === "dark" ? "light" : "dark")
+                }
+                className="dropdown-option"
+              >
+                <i
+                  className={
+                    currTheme === "dark" ? "bi bi-moon" : "bi bi-moon-fill"
+                  }
+                ></i>
+                <p>{currTheme === "dark" ? "Light" : "Dark"}</p>
+              </div>
+
               <div
                 style={{
                   borderTop: "1px solid var(--color-violet)",

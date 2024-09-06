@@ -36,7 +36,6 @@ function SingleProgram() {
   const [loading, setLoading] = useState<boolean>(false);
   const [showSummary, setShowSummary] = useState<boolean>(false);
   const [openChat, setOpenChat] = useState<boolean>(false);
-  const [openChatAuthor, setOpenChatAuthor] = useState<boolean>(false);
   const [summary, setSummary] = useState<string>("");
   const [program, setProgram] = useState<ProgramType | null>(null);
   const [likesCount, setlikesCount] = useState<number>(0);
@@ -72,13 +71,15 @@ function SingleProgram() {
     try {
       setUserLiked(!userLiked);
       if (!userLiked) {
+        setlikesCount(likesCount + 1);
+
         await axios.post(`/likes`, {
           referenceId: programId,
         });
-        setlikesCount(likesCount + 1);
       } else {
-        await axios.delete(`/likes/${programId}`);
         setlikesCount(likesCount - 1);
+
+        await axios.delete(`/likes/${programId}`);
       }
     } catch (error) {
       setUserLiked(userLiked);

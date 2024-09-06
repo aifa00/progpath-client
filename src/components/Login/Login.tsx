@@ -7,11 +7,13 @@ import { setAvatarUrl, setUser, setUsername } from "../../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
+import { ClipLoader } from "react-spinners";
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showForgotPasswordForm, setShowForgotPasswordForm] = useState(false);
   const [formInputs, setFormInputs] = useState({
@@ -68,6 +70,10 @@ const Login = () => {
 
     if (error.emailError === "" && error.passwordError === "") {
       try {
+        if (loading) return;
+
+        setLoading(true);
+
         const res = await axios.post(`/login`, {
           email: formInputs.email.trim(),
           password: formInputs.password,
@@ -84,14 +90,20 @@ const Login = () => {
         }
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     }
   };
 
+  const handleOuterClick = () => {
+    dispatch(resetForm());
+  };
+
   return (
     <>
-      <div className="dialog-overlay">
-        <div className="login-form">
+      <div className="dialog-overlay" onClick={handleOuterClick}>
+        <div className="login-form" onClick={(e) => e.stopPropagation()}>
           <button
             className="close-button"
             onClick={() => dispatch(resetForm())}
@@ -135,8 +147,17 @@ const Login = () => {
             )}
           </div>
 
-          <button className="btn-primary login-button" onClick={handleSubmit}>
-            LOGIN
+          <button
+            className={
+              loading ? "btn-disabled login-button" : "btn-primary login-button"
+            }
+            onClick={handleSubmit}
+          >
+            {!loading ? (
+              "LOGIN"
+            ) : (
+              <ClipLoader size={10} color="var(--color-text-secondary)" />
+            )}
           </button>
 
           <p className="login-link">

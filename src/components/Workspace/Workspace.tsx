@@ -9,6 +9,7 @@ import { getRole } from "../../utils/jwtUtils";
 import { togglePremiumComponent } from "../../redux/premiumSlice";
 import { BarLoader } from "react-spinners";
 import Tooltip from "rc-tooltip";
+import Spinner from "../../assets/Spinner";
 
 interface Workspace {
   title: string;
@@ -23,6 +24,7 @@ interface State {
 }
 
 function Workspace() {
+  const [pageLoading, setPageLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [role] = useState(getRole());
   const [search, setSearch] = useState("");
@@ -69,6 +71,8 @@ function Workspace() {
 
   const getWorkspace = async () => {
     try {
+      setPageLoading(true);
+
       const res = await axios.get(`/workspaces`);
 
       if (res.data.success) {
@@ -76,6 +80,8 @@ function Workspace() {
       }
     } catch (error: any) {
       console.log(error);
+    } finally {
+      setPageLoading(false);
     }
   };
   useEffect(() => {
@@ -201,6 +207,13 @@ function Workspace() {
       ),
     [result.workspaces, search]
   );
+
+  if (pageLoading)
+    return (
+      <div className="spinner">
+        <Spinner />
+      </div>
+    );
 
   return (
     <div className="workspace" onClick={handleClose}>

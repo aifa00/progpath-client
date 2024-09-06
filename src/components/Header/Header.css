@@ -3,8 +3,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: var(--color-primary);
   padding-inline: 30px;
+}
+
+.header-main .header-left {
+  cursor: pointer;
 }
 
 .header-main .header-right {
@@ -24,10 +28,9 @@
   margin-left: 10px;
 }
 
-
 @media (min-width: 300px) and (max-width: 500px) {
   .header-main {
-    height: 30px;    
+    height: 30px;
   }
 
   .header-main .header-right img {

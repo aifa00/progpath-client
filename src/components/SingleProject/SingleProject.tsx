@@ -14,9 +14,11 @@ import { ChartData } from "chart.js";
 import LineChart from "../../assets/LineChart";
 import { getUserId } from "../../utils/jwtUtils";
 import Tooltip from "rc-tooltip";
+import { BarLoader } from "react-spinners";
 
 function SingleProject() {
   const { workspaceId, projectId } = useParams();
+  const [loading, setLoading] = useState(false);
   const [project, setProject] = useState<any>({
     title: "",
     description: "",
@@ -65,6 +67,8 @@ function SingleProject() {
   useEffect(() => {
     const fetchProject = async () => {
       try {
+        setLoading(true);
+
         const { data } = await axios.get(
           `/workspaces/${workspaceId}/projects/${projectId}`
         );
@@ -76,9 +80,13 @@ function SingleProject() {
         }
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
+
     fetchProject();
+
     fetchBurnOutGraph();
 
     const queryParams = new URLSearchParams(location.search);
@@ -96,6 +104,8 @@ function SingleProject() {
 
   const fetchTasks = async () => {
     try {
+      setLoading(true);
+
       const { data } = await axios.get(
         `/workspaces/${workspaceId}/projects/${projectId}/tasks`,
         {
@@ -116,6 +126,8 @@ function SingleProject() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -486,6 +498,10 @@ function SingleProject() {
                 )}
 
                 <div className="cards">
+                  {loading && (
+                    <BarLoader color="var(--color-blue)" width={"100%"} />
+                  )}
+
                   <div className="task-status-wrapper">
                     <h2 className="status-heading">Stuck</h2>
                     <TaskCard
@@ -557,6 +573,7 @@ function SingleProject() {
             fetchTasks={fetchTasks}
             workspaceMembers={workspaceMembers}
             setTaskModal={setTaskModal}
+            fetchBurnOutGraph={fetchBurnOutGraph}
           />
         )}
         {openDeleteDialog && (

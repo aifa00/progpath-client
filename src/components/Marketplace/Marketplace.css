@@ -16,6 +16,7 @@
 
 .marketplace .main .utils {
   display: flex;
+  align-items: center;
 }
 
 .marketplace .main .utils #sortButton,
@@ -23,22 +24,55 @@
   position: relative;
 }
 
+.marketplace .main .utils #sortButton button:hover,
+.marketplace .main .utils #filterButton button:hover {
+  background-color: var(--color-violet);
+}
+
 .marketplace .main .utils #sortButton button,
 .marketplace .main .utils #filterButton button {
   background: transparent;
   border: none;
   outline: none;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
-.marketplace .main .utils input[type="search"] {
-  width: 100%;
+.marketplace .main .utils input[type="text"] {
+  width: 85%;
+  background: transparent;
+  border: none;
+  outline: none;
   font-size: medium;
-  padding: 5px 40px 5px 5px;
+  padding: 10px;
+  color: var(--color-text-primary);
+  border-radius: 10px;
+}
+
+.marketplace .main .body .utils .search-input {
+  flex: 1;
+  position: relative;
   margin-left: 1rem;
+  background-color: var(--color-bg-gray);
+  border-radius: 10px;
 }
-.marketplace .main .utils input[type="search"]::placeholder {
-  font-size: small;
+
+.marketplace .main .body .utils #searchIcon {
+  position: absolute;
+  right: 0;
+  padding: 8px 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
+
+.marketplace .main .body .utils #searchIcon:hover {
+  background-color: var(--color-hover-gray);
+}
+
+.marketplace .main .body .utils #searchIcon:hover {
+  color: var(--color-blue);
+}
+
 .marketplace .main .utils .sort-and-filter {
   position: relative;
   display: flex;
@@ -101,21 +135,6 @@
   color: var(--color-violet);
 }
 
-.marketplace .main .body .utils .search-input {
-  flex: 1;
-  position: relative;
-  margin-left: 1rem;
-}
-
-.marketplace .main .body .utils #searchIcon {
-  position: absolute;
-  right: 0;
-}
-
-.marketplace .main .body .utils #searchIcon:hover {
-  color: var(--color-blue);
-}
-
 .marketplace .main .body .utils .sort-and-filter .dropdown-option {
   justify-content: space-between;
 }
@@ -137,6 +156,14 @@
   z-index: 10;
 }
 
+.marketplace .chat-button:hover {
+  background-color: var(--color-hover-violet);
+}
+
+.marketplace .utils #upload-btn {
+  padding: 10px;
+}
+
 @media (min-width: 300px) and (max-width: 400px) {
   .marketplace .main .body {
     margin: 15px auto;
@@ -145,6 +172,10 @@
 
   .marketplace .main .utils {
     flex-direction: column;
+  }
+
+  .marketplace .main .utils div {
+    width: 90%;
   }
 
   .marketplace .main .utils .dropdown-menu {
@@ -166,11 +197,6 @@
     padding: 5px;
   }
 
-  .marketplace .main .body .utils #searchIcon {
-    bottom: 8px;
-    right: 5px;
-  }
-
   .marketplace .main .content {
     margin-top: 3rem;
   }
@@ -184,7 +210,12 @@
   .marketplace .chat-button {
     right: 2rem;
     bottom: 3rem;
-    padding: 5px;
+    padding: 10px;
+  }
+
+  .marketplace .main .utils #sortButton,
+  .marketplace .main .utils #filterButton {
+    flex: 1;
   }
 }
 
@@ -201,10 +232,6 @@
 
   #upload-btn {
     padding: 5px;
-  }
-
-  .marketplace .main .body .utils #searchIcon {
-    bottom: 5px;
   }
 
   .marketplace .main .content {

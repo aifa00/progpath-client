@@ -88,7 +88,7 @@ const CommentBox: React.FC<CommentBoxType> = ({
           setCommentsCount((prevCount: number) => prevCount + 1);
           setCommentText("");
           setComments((prevComments: any) => [
-            data.newComment,
+            { ...data.newComment, replyCount: 0 },
             ...prevComments,
           ]);
         }
@@ -202,6 +202,7 @@ const CommentBox: React.FC<CommentBoxType> = ({
               : comment
           ),
         ]);
+
         dispatch(setAlert({ message: "Reply added", type: "success" }));
       }
     } catch (error) {

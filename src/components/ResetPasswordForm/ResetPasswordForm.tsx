@@ -108,7 +108,7 @@ const ResetPasswordFor: React.FC<ResetPasswordProps> = ({
         <div className="submit-button">
           <button
             onClick={handleSubmit}
-            className={loading ? "btn-disabled" : "btn-secondary"}
+            className={loading ? "btn-disabled" : "btn-primary"}
           >
             RESET PASSWORD
           </button>

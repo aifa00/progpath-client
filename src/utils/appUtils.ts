@@ -91,3 +91,52 @@ export const getPriorityColor = (priority: string) => {
   if (priority === "High") return "#f94449";
   return "var(--color-text-primary)";
 };
+
+export const getTheme = () => {
+  return localStorage.getItem("theme") || "dark";
+};
+
+export function setTheme(theme: string) {
+  const root = document.documentElement;
+  const themeColors: any = {
+    light: {
+      "--color-body": "#ffffff",
+      "--color-primary": "#ffffff",
+      "--color-secondary": "#ffffff",
+      "--color-tertiary": "#f1f0f0",
+      "--color-blue": "#1859ff",
+      "--color-violet": "rgb(165, 126, 165)",
+      "--color-hover-violet": "rgb(128, 82, 128)",
+      "--color-bg-gray": "rgba(202, 202, 202, 0.263)",
+      "--color-hover-gray": "rgba(168, 167, 167, 0.368)",
+      "--color-success": "#23bf48",
+      "--color-error": "#ef4253",
+      "--color-warning": "#ffc107",
+      "--color-text-primary": "#000000",
+      "--color-text-secondary": "#545454",
+    },
+    dark: {
+      "--color-body": "#0c0b11",
+      "--color-primary": "#000000",
+      "--color-secondary": "#0c0b11",
+      "--color-tertiary": "#1a1a1a",
+      "--color-blue": "#1859ff",
+      "--color-violet": "rgb(148, 102, 148)",
+      "--color-hover-violet": "rgb(128, 82, 128)",
+      "--color-bg-gray": "rgba(55, 55, 55, 0.263)",
+      "--color-hover-gray": "rgba(93, 93, 93, 0.368)",
+      "--color-success": "#23bf48",
+      "--color-error": "#bc1324",
+      "--color-warning": "#ffc107",
+      "--color-text-primary": "#bebebe",
+      "--color-text-secondary": "#8a8a8a",
+    },
+  };
+
+  // Update colors
+  for (const key in themeColors[theme]) {
+    root.style.setProperty(key, themeColors[theme][key]);
+  }
+
+  localStorage.setItem("theme", theme);
+}

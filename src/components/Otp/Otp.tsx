@@ -104,14 +104,14 @@ const Otp: React.FC<OtpProps> = ({ setOtpForm, onSuccess, email }) => {
 
   return (
     <div className="dialog-overlay">
-      <div className="otp-body">
+      <div className="otp-body" onClick={(e) => e.stopPropagation()}>
         <strong onClick={() => setOtpForm(false)}>&times;</strong>
         <div className="logo">
           <Logo />
         </div>
 
         <div className="otp-form">
-          <p>{`We have sent a six digit One Time Password to ${email} Enter the OTP below to continue`}</p>
+          <p>{`We have sent a four digit OTP to ${email} Enter the OTP below to continue`}</p>
           <div className="otp-inputs">
             {otp.map((num, i) => {
               return (
