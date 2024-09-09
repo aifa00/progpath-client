@@ -503,7 +503,7 @@ function SingleProject() {
                   )}
 
                   <div className="task-status-wrapper">
-                    <h2 className="status-heading">Stuck</h2>
+                    <h2 className="status-heading">Blocked</h2>
                     <TaskCard
                       projectTheme={project?.theme}
                       tasks={[...tasks].filter(

@@ -4,7 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100dvh;
+  height: 100vh;
 }
 
 .welcome-screen nav .nav-links {
@@ -88,10 +88,6 @@
 }
 
 @media (min-width: 300px) and (max-width: 500px) {
-  .welcome-screen {
-    height: 80dvh;
-  }
-
   .welcome-screen .navbar {
     padding-block: 30px;
     font-size: smaller;
@@ -105,17 +101,17 @@
     left: 50%;
     width: 80%;
     height: 50%;
-    padding-left: 40px;
+    padding-left: 25px;
   }
   .welcome-screen .hero-title {
-    font-size: larger !important;
+    font-size: x-large !important;
     max-width: 100%;
-    margin-bottom: 15px;
   }
   .welcome-screen .hero-description {
     max-width: 90%;
     margin-top: 10px;
     font-size: initial !important;
+    font-weight: lighter;
     line-height: 20px;
   }
   .welcome-screen .welcome-heading {

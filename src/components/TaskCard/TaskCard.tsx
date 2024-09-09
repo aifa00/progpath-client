@@ -74,7 +74,7 @@ const TaskCard: React.FC<any> = ({
             Done
           </option>
           <option style={{ color: getStatusColor("Stuck") }} value="Stuck">
-            Stuck
+            Blocked
           </option>
         </select>
       </div>

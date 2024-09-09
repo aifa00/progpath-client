@@ -27,7 +27,7 @@
   max-width: 35%;
 }
 .main-container .inner-container .content .title {
-  font-size: xx-large;
+  font-size: 40px;
   line-height: 80px;
 }
 .main-container .inner-container .content .text {
@@ -41,10 +41,11 @@
   }
   .main-container .inner-container .content .title {
     line-height: 60px;
+    font-size: 30px;
   }
   .main-container .inner-container .content .text {
     font-size: large;
-    line-height: 30px;
+    line-height: 25px;
   }
 }
 

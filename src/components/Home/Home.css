@@ -23,12 +23,16 @@
   display: none;
 }
 
+.homepage .innerdiv-dashboard .upper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 3rem;
+}
+
 .homepage .innerdiv-dashboard .subdiv-analytics {
-  position: absolute;
-  top: 25%;
-  left: 15%;
-  width: 35%;
   color: var(--color-text-primary);
+  width: 30rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,14 +45,11 @@
 }
 
 .homepage .innerdiv-dashboard .subdiv-reminder {
-  position: absolute;
-  top: 70%;
-  left: 10%;
-  width: 80%;
   color: var(--color-text-primary);
   display: flex;
   justify-content: space-around;
   padding-bottom: 2%;
+  margin: 3rem;
 }
 
 .homepage .innerdiv-dashboard .subdiv-reminder .due-tasks {
@@ -57,13 +58,14 @@
   min-height: 20vh;
 }
 
-.homepage .innerdiv-dashboard .subdiv-reminder .due-tasks span {
+.homepage .innerdiv-dashboard .subdiv-reminder .no-task-found {
   color: var(--color-text-secondary);
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  cursor: default;
 }
 
 .homepage .innerdiv-dashboard .subdiv-reminder div h5 {
@@ -91,11 +93,8 @@
 }
 
 .homepage .innerdiv-dashboard .subdiv-piechart {
-  position: absolute;
   color: var(--color-text-primary);
   text-align: center;
-  right: 15%;
-  top: 10%;
   width: 25%;
   height: 50%;
 }
@@ -109,20 +108,13 @@
     padding: 10px;
   }
 
-  .homepage .innerdiv-dashboard .subdiv-piechart {
-    right: 15%;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
+  .homepage .innerdiv-dashboard .subdiv-analytics {
+    width: 18rem;
   }
 
-  .homepage .innerdiv-dashboard .subdiv-analytics {
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    font-size: smaller;
+  .homepage .innerdiv-dashboard .subdiv-piechart {
+    width: 100%;
+    margin-top: 3rem;
   }
 
   .homepage .innerdiv-dashboard .subdiv-analytics h3 {
@@ -130,54 +122,38 @@
   }
 
   .homepage .innerdiv-dashboard .subdiv-reminder {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
     flex-direction: column;
-    align-items: center;
   }
 
-  .homepage .innerdiv-dashboard .subdiv-reminder div {
-    width: 80%;
-    margin-bottom: 2rem;
-    font-size: x-small;
+  .homepage .innerdiv-dashboard .subdiv-reminder .due-tasks {
+    width: 100%;
   }
 }
 
 @media (min-width: 501px) and (max-width: 1000px) {
-  .homepage .innerdiv-dashboard .subdiv-piechart {
-    right: 15%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
+  .homepage .innerdiv-dashboard .subdiv-analytics {
+    width: 90%;
   }
 
-  .homepage .innerdiv-dashboard .subdiv-analytics {
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
+  .homepage .innerdiv-dashboard .subdiv-piechart {
+    width: 100%;
+    margin-top: 3rem;
   }
 
   .homepage .innerdiv-dashboard .subdiv-analytics h3 {
     font-size: 2rem;
   }
 
-  .homepage .innerdiv-dashboard .subdiv-reminder {
-    position: absolute;
-    top: 100vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
+  .homepage .innerdiv-dashboard .subdiv-piechart {
+    width: 50%;
+    margin-top: 3rem;
   }
 
-  .homepage .innerdiv-dashboard .subdiv-reminder div {
-    width: 60%;
-    margin-bottom: 2rem;
+  .homepage .innerdiv-dashboard .subdiv-reminder {
+    flex-direction: column;
+  }
+
+  .homepage .innerdiv-dashboard .subdiv-reminder .due-tasks {
+    width: 100%;
   }
 }

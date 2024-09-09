@@ -58,7 +58,7 @@ function Home() {
   const navigate = useNavigate();
 
   const data: ChartData<"pie"> = {
-    labels: ["NOT STARTED", "IN PROGRESS", "STUCK", "DONE"],
+    labels: ["NOT STARTED", "IN PROGRESS", "BLOCKED", "DONE"],
     datasets: [
       {
         data: taskStatusCounts,
@@ -93,44 +93,51 @@ function Home() {
       <SideBar />
       <div className="dashboard">
         <div className="innerdiv-dashboard">
-          <div className="subdiv-analytics">
-            <div>
-              <h5>WORKSPACES</h5>
-              <Tooltip
-                placement="top"
-                trigger={["hover"]}
-                overlay={<span>Workspaces({result.totalWorkspaces || 0})</span>}
-              >
-                <h3>{result.totalWorkspaces || 0}</h3>
-              </Tooltip>
+          <div className="upper">
+            <div className="subdiv-analytics">
+              <div>
+                <h5>WORKSPACES</h5>
+                <Tooltip
+                  placement="top"
+                  trigger={["hover"]}
+                  overlay={
+                    <span>Workspaces({result.totalWorkspaces || 0})</span>
+                  }
+                >
+                  <h3>{result.totalWorkspaces || 0}</h3>
+                </Tooltip>
+              </div>
+              <div>
+                <h5>PROJECTS</h5>
+                <Tooltip
+                  placement="top"
+                  trigger={["hover"]}
+                  overlay={<span>Projects({result.totalProjects || 0})</span>}
+                >
+                  <h3>{result.totalProjects || 0}</h3>
+                </Tooltip>
+              </div>
+              <div>
+                <h5>INVITATIONS</h5>
+                <Tooltip
+                  placement="top"
+                  trigger={["hover"]}
+                  overlay={
+                    <span>Invitations({result.newInvitations || 0})</span>
+                  }
+                >
+                  <h3>{result.newInvitations || 0}</h3>
+                </Tooltip>
+              </div>
             </div>
-            <div>
-              <h5>PROJECTS</h5>
-              <Tooltip
-                placement="top"
-                trigger={["hover"]}
-                overlay={<span>Projects({result.totalProjects || 0})</span>}
-              >
-                <h3>{result.totalProjects || 0}</h3>
-              </Tooltip>
-            </div>
-            <div>
-              <h5>INVITATIONS</h5>
-              <Tooltip
-                placement="top"
-                trigger={["hover"]}
-                overlay={<span>Invitations({result.newInvitations || 0})</span>}
-              >
-                <h3>{result.newInvitations || 0}</h3>
-              </Tooltip>
-            </div>
+            {!taskStatusCounts.every((value: number) => value === 0) && (
+              <div className="subdiv-piechart">
+                <h5>TASK PROGRESSION</h5>
+                <PieChart data={data} />
+              </div>
+            )}
           </div>
-          {!taskStatusCounts.every((value: number) => value === 0) && (
-            <div className="subdiv-piechart">
-              <h5>TASK PROGRESSION</h5>
-              <PieChart data={data} />
-            </div>
-          )}
+
           <div className="subdiv-reminder">
             <div className="due-tasks">
               <h5>TASK DUE TODAY</h5>
@@ -152,9 +159,10 @@ function Home() {
                   ))}
                 </ul>
               ) : (
-                <span>
+                <span className="no-task-found">
                   <i className="bi bi-stickies-fill"></i>
-                  &nbsp; No tasks due today
+                  &nbsp; No tasks <br />
+                  due today
                 </span>
               )}
             </div>
@@ -178,9 +186,9 @@ function Home() {
                   ))}
                 </ul>
               ) : (
-                <span>
+                <span className="no-task-found">
                   <i className="bi bi-stickies-fill"></i>
-                  &nbsp; No tasks due tomorrow
+                  &nbsp; No tasks <br /> due tomorrow
                 </span>
               )}
             </div>
@@ -204,9 +212,9 @@ function Home() {
                   ))}
                 </ul>
               ) : (
-                <span>
+                <span className="no-task-found">
                   <i className="bi bi-stickies-fill"></i>
-                  &nbsp; No tasks due this week
+                  &nbsp; No tasks due <br /> this week
                 </span>
               )}
             </div>

@@ -26,9 +26,8 @@ import Subscription from "./components/Subscription/Subscription";
 import SingleProgramPage from "./pages/user/SingleProgramPage";
 import MarketplacePage from "./pages/user/MarketplacePage";
 import AdminProgramPage from "./pages/admin/AdminProgramPage";
-import Logo from "./assets/Logo";
-import { GridLoader } from "react-spinners";
 import { setTheme } from "./utils/appUtils";
+import InitialLoading from "./components/AppLoader/AppLoader";
 
 const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
@@ -79,17 +78,7 @@ function App() {
 
   if (error.type === "networkError") return <NetworkError />;
 
-  if (loading)
-    return (
-      <div className="initial-loading-screen">
-        <div className="logo">
-          <Logo />
-        </div>
-        <div className="propagate-loader">
-          <GridLoader color="var(--color-blue)" />
-        </div>
-      </div>
-    );
+  if (loading) return <InitialLoading />;
   return (
     <>
       {alert.value.message && <Alert />}

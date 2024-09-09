@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { projectThemes } from "../../constants/constants";
 import axios from "../../axiosConfig";
 import { useParams } from "react-router-dom";
+import { BarLoader } from "react-spinners";
 
 const EditProject: React.FC<any> = ({
   project,
@@ -94,10 +95,11 @@ const EditProject: React.FC<any> = ({
               !title || !theme || loading ? "btn-disabled" : "btn-primary"
             }
             onClick={editProject}
-            style={{ marginTop: "5%" }}
+            style={{ marginBlock: "10px" }}
           >
             Edit Project
           </button>
+          {loading && <BarLoader width={"100%"} color="var(--color-blue)" />}
         </div>
       </div>
     </>

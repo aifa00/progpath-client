@@ -1,531 +1,536 @@
 .taskModal {
-    position: relative;
-    margin-top: 20rem;
-    margin-block: 20%;
-    width: 60%;
-    background-color: var(--color-tertiary);
-    height: 80%;
-    border-radius: 10px;
-    padding: 1rem;
-    color: var(--color-text-primary); 
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
+  position: relative;
+  margin-top: 20rem;
+  margin-block: 20%;
+  width: 60%;
+  background-color: var(--color-tertiary);
+  height: 80%;
+  border-radius: 10px;
+  padding: 1rem;
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .taskModal .editButtons {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .taskModal .editButtons button {
-    background-color: rgba(72, 72, 72, 0.263);
-    border-radius: 3px;
-    padding: 10px;
-    margin-inline: 5px;
-    border: none;
-    font-weight: bold;
-    width: 5rem;
+  background-color: rgba(72, 72, 72, 0.263);
+  border-radius: 3px;
+  padding: 10px;
+  margin-inline: 5px;
+  border: none;
+  font-weight: bold;
+  width: 5rem;
 }
 
 .taskModal .editButtons button:hover {
-    background-color: var(--color-blue);    
+  background-color: var(--color-blue);
 }
 
 #closeIcon {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    z-index: 1;
-    color: black;
-    font-size: x-large;
-    color: var(--color-text-secondary);
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  z-index: 1;
+  color: black;
+  font-size: x-large;
+  color: var(--color-text-secondary);
 }
 
 .taskModal .left {
-    position: relative;
-    flex: 2;
-    overflow-y: scroll;
+  position: relative;
+  flex: 2;
+  overflow-y: scroll;
 }
 
 .taskModal .left::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .taskModal .right {
-    flex: 1;
-    overflow-y: scroll;
-    margin-top: 5%;    
-    padding-left: 10px;
-    border-left: 1px solid rgba(64, 64, 64, 0.995);
+  flex: 1;
+  overflow-y: scroll;
+  margin-top: 5%;
+  padding-left: 10px;
+  border-left: 1px solid rgba(64, 64, 64, 0.995);
 }
 
-.taskModal .right::-webkit-scrollbar {    
-    display: none;
+.taskModal .right::-webkit-scrollbar {
+  display: none;
 }
 
 .taskModal .left .header {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .taskModal .left .header h3 {
-    display: inline-block;
+  display: inline-block;
 }
 
-
 .taskModal .left .body {
-    box-shadow: 0 -20px 20px -5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -20px 20px -5px rgba(0, 0, 0, 0.15);
 }
 
 .taskModal .left .body .upper label {
-    color: var(--color-text-primary);
-    background-color: rgba(64, 64, 64, 0.275);
-    border: none;
-    padding: 8px;
-    border-radius: 3px;
-    font-size: smaller;
-    margin-right: 10px;
-    cursor: pointer;
+  color: var(--color-text-primary);
+  background-color: rgba(64, 64, 64, 0.275);
+  border: none;
+  padding: 8px;
+  border-radius: 3px;
+  font-size: smaller;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-.taskModal .left .body .upper label:hover{
-    background-color: rgba(72, 72, 72, 0.947);
+.taskModal .left .body .upper label:hover {
+  background-color: rgba(72, 72, 72, 0.947);
 }
 
 .taskModal .left .body .lower div {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-
 .taskModal .left .body .lower .attachmentOuterdiv {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .taskModal .left .body .lower .attachmentImage {
-    margin: 0;
-    padding: 0;
-    border-radius: 5px;
-    position: relative;
-    margin-top: 1rem;
-    display: inline-block;
-    margin-right: 20px;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 1rem;
+  display: inline-block;
+  margin-right: 20px;
 }
 
-.taskModal .left .body .lower .attachments .attachmentImage img {    
-    border-radius: 5px;
-    width: 8rem;
-    height: 8rem;
+.taskModal .left .body .lower .attachments .attachmentImage img {
+  border-radius: 5px;
+  width: 8rem;
+  height: 8rem;
 }
-
 
 .taskModal .left .body .lower .attachments .attachmentIcons {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    color: var(--color-blue)
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: var(--color-blue);
 }
 
-
 .taskModal .left .body .lower .attachments .attachmentImage small {
-    position: absolute;
-    color: var(--color-text-secondary);
-    bottom: 10px;
-    left: 5px;
-    font-size: small;
+  position: absolute;
+  color: var(--color-text-secondary);
+  bottom: 10px;
+  left: 5px;
+  font-size: small;
 }
 
 .taskModal .left .body .lower .description {
-    position: relative;
+  position: relative;
 }
 
 .taskModal .left .body .lower .description textarea {
-    background-color: var(--color-bg-gray);
-    border: none;
-    border-left: 2px solid var(--color-blue);
-    padding-bottom: 15px;
+  background-color: var(--color-bg-gray);
+  border: none;
+  border-left: 2px solid var(--color-blue);
+  padding-bottom: 15px;
 }
 
 .taskModal .left .body .labels .currentLabels .singleLabel {
-    padding-block: 5px;
-    padding-inline: 8px;
-    border-radius: 5px;
-    display: inline-block;
-    
+  padding-block: 5px;
+  padding-inline: 8px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .taskModal .left .body .labels .currentLabels .singleLabel h5 {
-    display: inline-block;
-    color: var(--color-tertiary);
+  display: inline-block;
+  color: var(--color-tertiary);
 }
 
-.taskModal .left .body .labels .currentLabels .singleLabel input[type='text'] {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: var(--color-tertiary);
-    font-weight: 600;
+.taskModal .left .body .labels .currentLabels .singleLabel input[type="text"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-tertiary);
+  font-weight: 600;
 }
 
 .taskModal .left .body .labels .currentLabels i {
-    margin-left: 20px;
-    color: var(--color-tertiary);
+  margin-left: 20px;
+  color: var(--color-tertiary);
 }
 
 .taskModal .left .taskFooter {
-    margin-top: 10%; 
-} 
+  margin-top: 10%;
+}
 
 .taskModal .left .taskFooter .comment {
-    display: flex;
-    align-items: center;
-    padding: 10px;    
-    border-radius: 10px;
-    background-color: rgba(64, 64, 64, 0.275);
-    width: 95%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(64, 64, 64, 0.275);
+  width: 95%;
 }
 
 .taskModal .left .taskFooter .comment input {
-    flex-grow: 1;
-    margin-left: 10px;
-    padding: 5px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid var(--color-text-primary);
-    background: transparent;
-    color: var(--color-text-primary);
+  flex-grow: 1;
+  margin-left: 10px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color-text-primary);
+  background: transparent;
+  color: var(--color-text-primary);
 }
 
 .taskModal .left .taskFooter .comment img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
 }
 
 .taskModal .left .taskFooter .allComments {
-    padding: 10px;
+  padding: 10px;
 }
 
 .taskModal .left .taskFooter .allComments .singleComment img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50px; 
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
 }
 
 .taskModal .left .taskFooter .allComments .singleComment {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    padding: 10px;
-    border-radius: 10px;
-    background: transparent;
-    margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  background: transparent;
+  margin-bottom: 20px;
 }
 .taskModal .left .taskFooter .allComments .singleComment #editCommentIcon {
-    position: absolute;
-    top: 5px;
-    right: 50px;
-    color: var(--color-blue);
-    font-size: small;
-    text-decoration: underline;
+  position: absolute;
+  top: 5px;
+  right: 50px;
+  color: var(--color-blue);
+  font-size: small;
+  text-decoration: underline;
 }
 
 .taskModal .left .taskFooter .allComments .singleComment #deleteCommentIcon {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    color: var(--color-blue);
-    font-size: small;
-    text-decoration: underline;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: var(--color-blue);
+  font-size: small;
+  text-decoration: underline;
 }
 
-.taskModal .left .taskFooter .allComments .singleComment #editCommentSaveButton {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: var(--color-blue);
-    padding: 5px 10px;
-    border-radius: 3px;
-    text-decoration: none;
-    font-size: small;
+.taskModal
+  .left
+  .taskFooter
+  .allComments
+  .singleComment
+  #editCommentSaveButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--color-blue);
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: small;
 }
-.taskModal .left .taskFooter .allComments .singleComment #editCommentCancelButton {
-    position: absolute;
-    top: 5px;
-    right: 60px;
-    background-color: var(--color-blue);
-    padding: 5px 10px;
-    border-radius: 3px;
-    text-decoration: none;
-    font-size: small;
+.taskModal
+  .left
+  .taskFooter
+  .allComments
+  .singleComment
+  #editCommentCancelButton {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  background-color: var(--color-blue);
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: small;
 }
 
 .taskModal .left .taskFooter .allComments .singleComment:hover {
-    background-color: rgba(76, 76, 76, 0.347);
+  background-color: rgba(76, 76, 76, 0.347);
 }
 
-
 .taskModal .right ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border-top: 1px solid rgba(64, 64, 64, 0.995);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid rgba(64, 64, 64, 0.995);
 }
 
 .taskModal .right ul li {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-block: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-block: 10px;
 }
 
 .taskModal .right ul li label {
-    flex: 1;
-    font-size: smaller;
-    margin-top: 10px; 
+  flex: 1;
+  font-size: smaller;
+  margin-top: 10px;
 }
 .taskModal .right ul li .optionButton {
-    flex: 2;
-    font-size: smaller;
-    padding-block: 10px;
-    background-color: var(--color-bg-gray);
-    border-radius: 3px;
-    padding-inline: 5px;
-    text-align: center;
+  flex: 2;
+  font-size: smaller;
+  padding-block: 10px;
+  background-color: var(--color-bg-gray);
+  border-radius: 3px;
+  padding-inline: 5px;
+  text-align: center;
 }
-
 
 .taskModal .right ul li .optionButton span {
-    color: var(--color-blue)
+  color: var(--color-blue);
 }
 
-.taskModal .right ul li .optionButton input[type='date'] {    
-    text-align: center;
-    background: transparent;
-    color: var(--color-text-primary);
-    outline: none;
-    border: none;
+.taskModal .right ul li .optionButton input[type="date"] {
+  text-align: center;
+  background: transparent;
+  color: var(--color-text-primary);
+  outline: none;
+  border: none;
 }
 
-.taskModal .right ul .statusDropdown, .priorityDropdown, .assigneeDropdown, .reporterDropdown {
-    border-top: 1px solid gray;
-    margin-top: 10px;
+.taskModal .right ul .statusDropdown,
+.priorityDropdown,
+.assigneeDropdown,
+.reporterDropdown {
+  border-top: 1px solid gray;
+  margin-top: 10px;
 }
 
-.taskModal .right ul .dropdownOptions, .selectedMembers {
-    position: relative;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    padding: 5px;
-    margin-top: 5px;    
+.taskModal .right ul .dropdownOptions,
+.selectedMembers {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
 }
 
-
-.taskModal .right ul .dropdownOptions img, .selectedMembers img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    margin-right: 5px;
+.taskModal .right ul .dropdownOptions img,
+.selectedMembers img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  margin-right: 5px;
 }
-.taskModal .right ul .dropdownOptions .removeButton, .selectedMembers .removeButton {
-    padding-inline: 5px;
-    border-radius: 15px;
-    position: absolute;
-    right: 5px;
-    color: var(--color-text-primary);
+.taskModal .right ul .dropdownOptions .removeButton,
+.selectedMembers .removeButton {
+  padding-inline: 5px;
+  border-radius: 15px;
+  position: absolute;
+  right: 5px;
+  color: var(--color-text-primary);
 }
 
 .taskModal .right ul .selectedMembers .removeButton:hover {
-    background-color: rgba(251, 19, 19, 0.317);
+  background-color: rgba(251, 19, 19, 0.317);
 }
 .taskModal .right ul .dropdownOptions:hover {
-    background-color: rgba(72, 72, 72, 0.495);
+  background-color: rgba(72, 72, 72, 0.495);
 }
 
-
-.taskModal .left .header input[type='text'] {
-    background-color: rgba(55, 55, 55, 0.263);
-    width: 95%;   
-    border-radius: 3px;
-    padding: 10px;
-    color: var(--color-text-primary);
-    border: none;
-    outline: none;
-    border-left: 2px solid var(--color-blue);
-    margin-top: 5px;
+.taskModal .left .header input[type="text"] {
+  background-color: rgba(55, 55, 55, 0.263);
+  width: 95%;
+  border-radius: 3px;
+  padding: 10px;
+  color: var(--color-text-primary);
+  border: none;
+  outline: none;
+  border-left: 2px solid var(--color-blue);
+  margin-top: 5px;
 }
 
 .task-description {
-    padding: 10px;
-    font-size: smaller;
-    background-color: var(--color-bg-gray);
-    border-radius: 10px;
+  padding: 10px;
+  font-size: smaller;
+  background-color: var(--color-bg-gray);
+  border-radius: 10px;
 }
 
 .taskModal .right .tags div {
-    display: flex;
-    align-items: center;
-    border-radius: 15px;
-    padding-inline: 10px;
-    background-color: var(--color-tertiary);    
-    margin-right: 10px;
-    margin-block: 5px;
-    border: 1px solid var(--color-text-secondary);
-    height: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  padding-inline: 10px;
+  background-color: var(--color-tertiary);
+  margin-right: 10px;
+  margin-block: 5px;
+  border: 1px solid var(--color-text-secondary);
+  height: 20px;
 }
 
 .taskModal .right .tags span {
-    font-size: large;
+  font-size: large;
 }
 
 .taskModal .right ul .tagsDropdown {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid var(--color-text-primary);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-text-primary);
 }
 
 .taskModal .right ul .tagsDropdown div {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.taskModal .right ul input[type='number'] {
-    background: transparent;
-    border: none;
-    outline: none;
-    border-bottom: 3px solid var(--color-blue);
-    text-align: center;
-    color: var(--color-text-primary);
-    font-weight: 600;
-    width: 50px;    
+.taskModal .right ul input[type="number"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid var(--color-blue);
+  text-align: center;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  width: 50px;
 }
 
-.taskModal .right ul input[type='number']::-webkit-outer-spin-button,
-.taskModal .right ul input[type='number']::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.taskModal .right ul input[type="number"]::-webkit-outer-spin-button,
+.taskModal .right ul input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .taskModal .div1 {
-    display: flex;
-    flex-grow: 1;
-    overflow-y: scroll;
+  display: flex;
+  flex-grow: 1;
+  overflow-y: scroll;
 }
 .taskModal .div1::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .taskModal .div2 button {
-    width: 100%;
-    margin-top: 30px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 .taskModal .div2 button:hover {
-    transform: scale(1);
+  transform: scale(1);
 }
-
-
 
 @media (min-width: 300px) and (max-width: 500px) {
-    .taskModal {        
-        width: 90%;
-        background-color: var(--color-tertiary);         
-        padding: 5px;
-    }
-    
-    .taskModal .div1 { 
-        flex-direction: column; 
-    }
+  .taskModal {
+    width: 90%;
+    background-color: var(--color-tertiary);
+    padding: 5px;
+  }
 
-    .taskModal .left { 
-        flex: initial;
-        margin-top: 1.6rem;
-        box-sizing: border-box;
-    }
+  .taskModal .div1 {
+    flex-direction: column;
+  }
 
-    .taskModal .right {
-        position: relative;
-        flex: initial;        
-        border-left: 0;
-        padding-inline: 5px;
-        border-top: 1px solid rgba(64, 64, 64, 0.995);
-        padding-top: 10px;
-        margin-top: 0;
-    }
+  .taskModal .left {
+    flex: initial;
+    margin-top: 1.6rem;
+    box-sizing: border-box;
+  }
 
-    .taskModal .editButtons {
-        top: 5px;
-    }
+  .taskModal .right {
+    position: relative;
+    flex: initial;
+    border-left: 0;
+    padding-inline: 5px;
+    border-top: 1px solid rgba(64, 64, 64, 0.995);
+    padding-top: 10px;
+    margin-top: 0;
+  }
 
-    .taskModal .editButtons button {        
-        padding: 5px;
-        width: 3rem; 
-    }
+  .taskModal .editButtons {
+    top: 5px;
+  }
 
-    .taskModal .div2 button {
-        margin-top: 20px;
-    }
+  .taskModal .editButtons button {
+    padding: 5px;
+    width: 3rem;
+  }
 
-    .taskModal .right ul {       
-        border-top: 0
-    }
+  .taskModal .div2 button {
+    margin-top: 20px;
+  }
 
-    .taskModal .left .singleComment textarea {
-        width: 11rem !important;
-    }
+  .taskModal .right ul {
+    border-top: 0;
+  }
 
-    .taskModal .left .singleComment span {
-        font-size: x-small !important; 
-    }
+  .taskModal .left .singleComment textarea {
+    width: 11rem !important;
+  }
 
-    .taskModal .left .singleComment img {
-        width: 20px !important;
-        height: 20px !important;
-    }
+  .taskModal .left .singleComment span {
+    font-size: x-small !important;
+  }
 
-    .taskModal .comment img {
-        width: 20px !important;
-        height: 20px !important;
-    }
+  .taskModal .left .singleComment img {
+    width: 20px !important;
+    height: 20px !important;
+  }
 
-    .taskModal .left input { 
-        width: 90%;
-    }
+  .taskModal .comment img {
+    width: 20px !important;
+    height: 20px !important;
+  }
 
-    #closeIcon { 
-        top: 2%;
-        right: 5%;       
-        font-size: large !important; 
-    }
+  .taskModal .left input {
+    width: 90%;
+  }
 
-    .taskModal .left .body .lower .attachments .attachmentImage img { 
-        width: 5.5rem;
-        height: 5.5rem;
-    }
-    
-    .taskModal .left .body .lower .attachments .attachmentImage small {     
-        left: 3px;
-        font-size: xx-small;
-    }
+  #closeIcon {
+    top: 2%;
+    right: 5%;
+    font-size: large !important;
+  }
 
-    .taskModal .left .body .lower .attachmentImage {        
-        margin-top: 0.5rem;        
-        margin-right: 10px;
-    }
+  .taskModal .left .body .lower .attachments .attachmentImage img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
 
-    .taskModal .left .body .lower .attachments .attachmentIcons {        
-        top: 0;
-        right: 3px; 
-    }
+  .taskModal .left .body .lower .attachments .attachmentImage small {
+    left: 3px;
+    font-size: xx-small;
+  }
+
+  .taskModal .left .body .lower .attachmentImage {
+    margin-top: 0.5rem;
+    margin-right: 10px;
+  }
+
+  .taskModal .left .body .lower .attachments .attachmentIcons {
+    top: 0;
+    right: 3px;
+  }
 }
 
-
 @media (min-width: 501px) and (max-width: 1110px) {
-    .taskModal {        
-        width: 90%;
-    }
+  .taskModal {
+    width: 90%;
+  }
 }
