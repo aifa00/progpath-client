@@ -109,16 +109,21 @@
   }
 
   .homepage .innerdiv-dashboard .subdiv-analytics {
-    width: 18rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homepage .innerdiv-dashboard .subdiv-analytics h5 {
+    margin-top: 10px;
+    background-color: var(--color-bg-gray);
+    padding: 5px;
+    width: 12rem;
   }
 
   .homepage .innerdiv-dashboard .subdiv-piechart {
-    width: 100%;
+    width: 80%;
     margin-top: 3rem;
-  }
-
-  .homepage .innerdiv-dashboard .subdiv-analytics h3 {
-    font-size: 2rem;
   }
 
   .homepage .innerdiv-dashboard .subdiv-reminder {
@@ -142,6 +147,10 @@
 
   .homepage .innerdiv-dashboard .subdiv-analytics h3 {
     font-size: 2rem;
+  }
+  .homepage .innerdiv-dashboard .subdiv-reminder div h5 {
+    text-align: center;
+    font-size: small;
   }
 
   .homepage .innerdiv-dashboard .subdiv-piechart {

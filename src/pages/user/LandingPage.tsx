@@ -57,10 +57,10 @@ function LandingPage() {
       {data.map((obj) => {
         return (
           <Section
-            key={obj.title}
-            title={obj.title}
-            text={obj.text}
-            isLeft={obj.isLeft}
+            key={obj?.title}
+            title={obj?.title}
+            text={obj?.text}
+            isLeft={obj?.isLeft}
           />
         );
       })}

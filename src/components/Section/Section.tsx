@@ -13,7 +13,7 @@ const Section: React.FC<SectionProps> = ({ title, text, isLeft }) => {
         <div className="inner-container">
           <div
             className="content"
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-offset="0"
             data-aos-delay="0"
           >
@@ -25,7 +25,7 @@ const Section: React.FC<SectionProps> = ({ title, text, isLeft }) => {
           </div>
           <div
             className="content"
-            data-aos="fade-left"
+            data-aos="fade-right"
             data-aos-offset="0"
             data-aos-delay="0"
           >
