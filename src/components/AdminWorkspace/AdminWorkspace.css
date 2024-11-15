@@ -1,0 +1,220 @@
+.admin-workspace {
+    display: flex;
+    height: 100vh;
+    color: var(--color-text-primary);
+}
+
+
+.admin-workspace .container {
+    background-color: var(--color-secondary);
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.admin-workspace .container h5 {
+ position: absolute;
+ top: 5%;
+ left: 5%;
+}
+
+.admin-workspace .container {
+    position: relative;
+    background-color: var(--color-secondary);
+    overflow-y: scroll;
+}
+
+.admin-workspace .container::-webkit-scrollbar {
+    display: none;
+}
+
+.admin-workspace .container .table {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 27%;
+    left: 5%;
+    width: 90%;
+}
+
+.admin-workspace .container table {
+    font-size: smaller;
+    text-align: center;    
+    background-color: var(--color-tertiary);
+    border-radius: 2px;
+    border-collapse: collapse;
+}
+
+.admin-workspace .container table thead th {
+    border-bottom: 1px solid var(--color-text-primary);
+    padding: 1.5%;
+}
+
+.admin-workspace .container table tbody td {
+    padding: 1.5%;
+}
+
+.admin-workspace .container table select {
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    outline: none;
+}
+
+
+.admin-workspace .container table button {
+    border: 1px solid blue;
+    height: 20px;
+    margin-right: 3%;
+    background: transparent;
+    color: var(--color-text-primary);
+    box-shadow: 0 0 10px 0px rgba(144, 0, 255, 0.24), 0 0 10px 0px rgba(143, 0, 255, 0.24);
+}
+
+.admin-workspace .container table .freez-button {
+    width: 5rem;
+}
+
+.admin-workspace .container .search-filter-sort {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.admin-workspace .container .search-filter-sort select {
+    width: 5rem;
+}
+
+.admin-workspace .container option {
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);    
+}
+
+.admin-workspace .container .upper-row {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    width: 92%;
+    top: 14%;
+    left: 4%;
+    height: 10%;
+}
+
+.admin-workspace .container .upper-row div {
+    background-color: var(--color-tertiary);
+    flex: 1;
+    margin-inline: 1%;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline:3%;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+    .admin-workspace .container .search-filter-sort {
+        align-items: center;
+        width: 100%;        
+        top: 8%;
+        right: 0%;        
+    }
+
+    .admin-workspace .container .upper-row {              
+        height: 6%;
+        top: 17%;
+    }
+
+    .admin-workspace .container .upper-row div h4 {         
+        font-size: xx-small !important;
+    }
+
+    .admin-workspace .container .table {
+        top: 28%;
+        left: 5%;
+        width: 90%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .admin-workspace .container table {
+        font-size: x-small;
+    }
+
+    .admin-workspace .container table thead th,
+    .admin-workspace .container table tbody td {
+        padding: 18px 5px;
+    }
+
+    .admin-workspace .container table {
+        width: 600px;
+        margin-bottom: 20px;
+    }
+
+    .admin-workspace .container table tbody td img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .admin-workspace .container table tbody td select {
+        font-size: x-small;
+    }
+
+    .admin-workspace .container table tbody td button {
+        font-size: x-small;
+        padding: 3px 5px;
+    }
+}
+
+
+@media (min-width: 501px) and (max-width: 1000px) {
+    .admin-workspace .container .search-filter-sort {        
+        justify-content: space-between;
+        position: absolute;
+        top: 3%;        
+        right: 10%;        
+    }
+
+    .admin-workspace .container .upper-row {              
+        height: 8%;
+        top: 17%;
+    }
+
+    .admin-workspace .container .upper-row div h4 {         
+        font-size: small !important;
+    }
+
+    .admin-workspace .container .table {
+        top: 28%;
+        left: 5%;
+        width: 90%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .admin-workspace .container table thead th,
+    .admin-workspace .container table tbody td {
+        padding: 18px 5px;
+    }
+
+    .admin-workspace .container table {
+        width: 900px;
+        margin-bottom: 20px;
+    }
+
+    .admin-workspace .container table tbody td img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .admin-workspace .container table tbody td select {
+        font-size: x-small;
+    }
+
+    .admin-workspace .container table tbody td button {
+        font-size: x-small;
+        padding: 3px 5px;
+    }
+}

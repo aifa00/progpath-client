@@ -1,0 +1,185 @@
+.admin-programs {
+    display: flex;
+    height: 100vh;
+    color: var(--color-text-primary);
+}
+
+.admin-programs .container {
+    background-color: var(--color-secondary);
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.admin-programs .container h5 {
+ position: absolute;
+ top: 5%;
+ left: 5%;
+}
+
+.admin-programs .container {
+    position: relative;
+    background-color: var(--color-secondary);
+    overflow-y: scroll;
+}
+
+.admin-programs .container::-webkit-scrollbar {
+    display: none;
+}
+
+.admin-programs .container .table {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 90%;
+}
+
+.admin-programs .container table {
+    font-size: smaller;
+    text-align: center;    
+    background-color: var(--color-tertiary);
+    border-radius: 2px;
+    border-collapse: collapse;
+}
+
+.admin-programs .container table thead th {
+    border-bottom: 1px solid var(--color-text-primary);
+    padding: 1.5%;
+}
+
+.admin-programs .container table tbody td {
+    padding: 1.5%;
+}
+
+.admin-programs .container table select {
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    outline: none;
+}
+
+
+.admin-programs .container table button {
+    border: 1px solid blue;
+    height: 20px;
+    margin-right: 3%;
+    background: transparent;
+    color: var(--color-text-primary);
+    box-shadow: 0 0 10px 0px rgba(144, 0, 255, 0.24), 0 0 10px 0px rgba(143, 0, 255, 0.24);
+}
+
+.admin-programs .container table .bock-button {
+    width: 4rem;
+}
+
+.admin-programs .container table a {
+    color: var(--color-blue);
+    margin-left: 10px;
+}
+
+.admin-programs .container .search-filter-sort {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.admin-programs .container .search-filter-sort select {
+    width: 5rem;
+}
+
+.admin-programs .container option {
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);    
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+    .admin-programs .container .search-filter-sort {
+        align-items: center;
+        width: 100%;      
+        top: 10%;
+        right: 0%;      
+    }
+
+    .admin-programs .container .table {
+        top: 20%;
+        left: 5%;
+        width: 90%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .admin-programs .container table {
+        font-size: x-small;
+    }
+
+    .admin-programs .container table thead th,
+    .admin-programs .container table tbody td {
+        padding: 18px 5px;
+    }
+
+    .admin-programs .container table {
+        width: 600px;
+        margin-bottom: 20px;
+    }
+
+    .admin-programs .container table tbody td img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .admin-programs .container table tbody td select {
+        font-size: x-small;
+    }
+
+    .admin-programs .container table tbody td button {
+        font-size: x-small;
+        padding: 3px 5px;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+    .admin-programs .container .search-filter-sort {        
+        justify-content: space-between;
+        position: absolute;
+        top: 3%;        
+        right: 10%;        
+    }
+
+    .admin-programs .container .table {
+        top: 20%;
+        left: 5%;
+        width: 90%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .admin-programs .container table thead th,
+    .admin-programs .container table tbody td {
+        padding: 18px 5px;
+    }
+
+    .admin-programs .container table {
+        width: 900px;
+        margin-bottom: 20px;
+    }
+
+    .admin-programs .container table tbody td img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .admin-programs .container table tbody td select {
+        font-size: x-small;
+    }
+
+    .admin-programs .container table tbody td button {
+        font-size: x-small;
+        padding: 3px 5px;
+    }
+}

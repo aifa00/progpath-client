@@ -1,0 +1,57 @@
+.social-login button {
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.social-login .facebook-login {
+  padding: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-blue);
+  color: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.social-login .facebook-login  i{
+  margin-right: 10px;
+  margin-left: 2.5px;
+}
+.social-login .facebook-login:hover {
+  background-color: #73d6ea8d;
+}
+
+.social-login .select-role-form {
+  position: relative;
+  width: 40vw;
+  height: 40vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;  
+  color: var(--color-text-primary);
+  background-color: var(--color-tertiary);
+}
+
+.social-login .select-role-form .body { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+}
+
+.social-login .select-role-form .input-item {
+  margin-block: 3rem;
+}
+
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .social-login .facebook-login {
+    padding: 10px; 
+  }
+}
+  

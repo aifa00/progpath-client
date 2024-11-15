@@ -1,0 +1,118 @@
+.admin-header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding-inline: 30px;
+  color: var(--color-text-primary);
+}
+
+.admin-header .btn-toggle-collapsed {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.admin-header .header-left {
+  margin-left: 2rem;
+}
+
+.admin-header .header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+  
+.admin-header .header-right button {
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  cursor: pointer;
+  color: var(--color-violet);
+  background: transparent;
+  border: none;
+}
+
+.admin-header .header-right .dropdown-menu {
+  width: 10%;
+  background-color: var(--color-tertiary);
+  position: absolute;
+  top: 8%;
+  border-radius: 3px;  
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+  
+.admin-header .header-right .dropdown-menu .links {
+  padding-right: 30px;
+  padding-block: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.admin-header .header-right .dropdown-menu .links i {
+  font-size: x-large;
+  margin-inline: 10px;
+}
+
+.admin-header .header-right .dropdown-menu .links:hover {
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+  
+@media (min-width: 300px) and (max-width: 500px) {
+  .admin-header {
+    height: 30px;    
+  }
+
+  .admin-header .header-right .dropdown-menu {
+    top: 35px !important;
+  }
+
+  .admin-header .header-left {
+    margin-left: 1rem;
+  }
+
+  .admin-header .btn-toggle-collapsed {
+    top: .3rem;
+  }
+
+  .admin-header .btn-toggle-collapsed i {
+   font-size: large !important;
+  }
+
+  .admin-header .header-right button {
+    margin-left: 0px;
+    width: 20px;
+    height: 20px;    
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  
+  .admin-header {
+    height: 40px;
+  }
+
+  .admin-header .header-left {
+    margin-left: 2rem;
+  }
+
+  .admin-header .btn-toggle-collapsed {
+    top: .3rem;
+  }
+
+  .admin-header .btn-toggle-collapsed i {
+    font-size: x-large !important;
+   }
+}

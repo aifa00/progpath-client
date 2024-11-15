@@ -1,0 +1,177 @@
+.comment-box {
+  position: relative;
+  padding: 10px;
+  width: 40rem;
+  height: 35rem;
+  background-color: var(--color-tertiary);
+  border-radius: 10px;
+}
+
+.comment-box .comments {
+  height: 80%;
+  padding-block: 10px;
+  overflow-y: auto;
+}
+
+.comment-box .comments::-webkit-scrollbar {
+  display: none;
+}
+
+.comment-box .reply-input {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-inline: 10px;
+  margin-bottom: 3rem;
+}
+.comment-box .comments #show-reply-button {
+  font-size: small;
+  color: var(--color-blue);
+  cursor: pointer;
+  margin-right: 10px;
+}
+.comment-box .comments #show-reply-button i {
+  font-size: small;
+}
+
+.comment-box .comments #reply-button {
+  border-radius: 12px;
+  border: none;
+  padding: 5px 10px;
+  font-weight: 600;
+  background: transparent;
+  outline: none;
+}
+
+.comment-box .comments #reply-button:hover {
+  background-color: var(--color-hover-gray);
+}
+
+.comment-box .comments::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.comment-box .comments::-webkit-scrollbar-track {
+  background: var(--color-hover-gray); /* Background of the scrollbar track */
+  border-radius: 10px;
+  margin-block: 1rem;
+}
+
+.comment-box .comments::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.comment-box .comments::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color when hovered */
+}
+
+.comment-box .singleComment img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.comment-box .singleComment {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  background: transparent;
+  margin-bottom: 20px;
+}
+.comment-box .singleComment #editCommentIcon {
+  position: absolute;
+  top: 5px;
+  right: 50px;
+  color: var(--color-blue);
+  font-size: small;
+  text-decoration: underline;
+}
+
+.comment-box .singleComment #deleteCommentIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: var(--color-blue);
+  font-size: small;
+  text-decoration: underline;
+}
+
+.comment-box .singleComment #editCommentSaveButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--color-blue);
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: small;
+  font-weight: bold;
+}
+.comment-box .singleComment #editCommentCancelButton {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  background-color: var(--color-blue);
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: small;
+  font-weight: bold;
+}
+
+.comment-box .singleComment:hover {
+  background-color: rgba(76, 76, 76, 0.347);
+}
+
+.comment-box .comment-input {
+  position: absolute;
+  width: 95%;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(64, 64, 64, 0.275);
+}
+
+.comment-box .comment-input #comment-input,
+.comment-box .reply-input #reply-input {
+  flex-grow: 1;
+  margin-inline: 10px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color-text-primary);
+  background: transparent;
+  font-size: medium;
+  color: var(--color-text-primary);
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .comment-box {
+    padding: 15px;
+    width: 85%;
+  }
+
+  .comment-box .comments #show-reply-button {
+    font-size: x-small;
+  }
+
+  .comment-box .comment-input {
+    width: 85%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  .comment-box {
+    padding: 10px;
+    width: 30rem;
+  }
+
+  .comment-box .comment-input {
+    width: 90%;
+  }
+}
