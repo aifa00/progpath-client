@@ -41,8 +41,11 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({
       if (res.data.success) {
         setShowOtpForm(true);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      if (error.response && error.response.status === 404) {
+        setError("User doesn't exist, please register to continue");
+      }
     } finally {
       setLoading(false);
     }

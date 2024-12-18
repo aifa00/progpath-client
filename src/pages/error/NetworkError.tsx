@@ -18,8 +18,7 @@ function NetworkError() {
       >
         <img src="/images/network-error.png" width={50} height={50} alt="" />{" "}
         <br />
-        <h1>500</h1>
-        <h1>Server Error</h1>
+        <h1>Network Error</h1>
       </div>
     </>
   );
